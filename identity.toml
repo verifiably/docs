@@ -1,0 +1,15 @@
+# What this project is. `tools/ops-docs write` renders it into the identity region of
+# README.md and AGENTS.md; `tools/ops-docs check` refuses a commit while they differ.
+# Design: ops docs/specs/2026-09-22-project-guides-design.md §3.
+name = "docs"
+aliases = ["verifiably-docs"]
+# At most 80 characters: this line sits in every agent session in every project.
+purpose = "The verifiably ecosystem's front door: its goal, overview, and repository map"
+# One to three sentences, at most 400 characters: what it does and for whom.
+abstract = """
+The ecosystem-level documentation for verifiably: what it is for, how its five repositories fit together, and where each one's own guide lives. For newcomers, collaborators, and agents who need the big picture before any repository's detail.
+"""
+# Documents that are the authority for what is built or decided; each must be tracked.
+authority = []
+# Directories with their own identity.toml, README.md, and AGENTS.md.
+subsystems = []
