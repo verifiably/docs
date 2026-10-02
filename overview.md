@@ -220,7 +220,7 @@ names only the daily-surface layer.
 
 The state column is a snapshot as of 2026-09-26. Each repository is the
 authority for its own state: for the kernel, the
-[adoption ledger's current-state summary](https://github.com/verifiably/beliefs/blob/main/docs/designs/2026-08-03-redesign-adoption-ledger.md#current-state-2026-09-16);
+[adoption ledger's current-state summary](https://github.com/verifiably/beliefs/blob/main/docs/designs/2026-08-03-redesign-adoption-ledger.md#current-state-2026-10-01);
 for the others, their task trackers.
 
 The [user and autonomy layer design](https://github.com/verifiably/beliefs/blob/main/docs/superpowers/specs/2026-08-29-user-and-autonomy-layer-design.md)
