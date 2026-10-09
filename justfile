@@ -83,6 +83,8 @@ setup:
 hook-pre-commit:
     {{tt}} hook-pre-commit -- sh -c '{{check_cmd}}'
 
-# What the pre-push hook runs: the same commands as `gate`, under one hook target.
+# What the pre-push hook runs: the same commands as `gate`, under one hook target. This
+# repository is the verifiably family home, so the push also judges every member's
+# committed tools/family.toml against family.toml (ops family guide templates design §6).
 hook-pre-push:
-    {{tt}} hook-pre-push -- sh -c '{{check_cmd}} && {{test_cmd}}'
+    {{tt}} hook-pre-push -- sh -c '{{check_cmd}} && {{test_cmd}} && python3 tools/ops-docs family check'

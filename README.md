@@ -16,6 +16,9 @@ sibling repositories when they are checked out beside this one.
 ## Layout
 
 - `overview.md` — the ecosystem overview.
+- `family.toml` — the verifiably family: its summary, members and README contract,
+  rendered into every member's guides by ops-docs.
+- `templates/README.md` — the README a member starts from.
 - `tools/` — the link checker, and tooling vendored from ops.
 - `tasks/` — task records, managed with the `tasks` CLI.
 
@@ -28,6 +31,8 @@ sibling repositories when they are checked out beside this one.
 | `beliefs` | The epistemic kernel | [contributor guide](https://github.com/verifiably/beliefs/blob/main/docs/guide/README.md) |
 | `science` | The daily surface: commands for people and agents | [README](https://github.com/verifiably/science/blob/main/README.md) |
 | `autonomy` | Running the daily surface unattended | [README](https://github.com/verifiably/autonomy/blob/main/README.md) |
+
+The layer column is each member's label in `family.toml`; change the two together.
 
 ## What lives here, and what does not
 

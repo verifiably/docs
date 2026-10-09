@@ -15,6 +15,10 @@ it. On a fresh clone, run `git config core.hooksPath .githooks` once.
 ## Layout
 
 - `overview.md` — the ecosystem overview; `README.md` — the repository map.
+- `family.toml` — the family declaration; `tools/ops-docs family check` at pre-push
+  judges every member's committed copy against it.
+- `templates/README.md` — the member README template; `tools/check_links.py` skips
+  `templates/`.
 - `tools/check_links.py` — this repository's own link checker.
 - `tools/tt`, `tools/ops-check`, `tools/ops-docs` — vendored from ops; update from there.
 
@@ -31,3 +35,5 @@ it. On a fresh clone, run `git config core.hooksPath .githooks` once.
   are described as such.
 - A state claim names its authority. The overview's layer-state column is a dated
   snapshot; when a layer's state changes, update it or the date.
+- A member's label in `family.toml` is the layer column of the README table; a change
+  to one is a change to both, and nothing checks it.
