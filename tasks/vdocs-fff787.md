@@ -1,18 +1,20 @@
 ---
 id: vdocs-fff787
 title: Design the verifiably README template from the brief
-status: doing
+status: done
 priority: 2
 size: m
 complexity: high
 process: planned
-owner: design/readme-template
+owner: main
 created: 2026-10-09T18:36:19Z
-updated: 2026-10-09T23:21:24Z
+updated: 2026-10-09T23:22:57Z
 started: 2026-10-09T21:48:52Z
+completed: 2026-10-09T23:22:57Z
 depends: [ops-a0318e]
 parent: vdocs-0f0163
 tags: [docs]
+model: claude-fable-5-1
 agent: claude-code/claude-opus-5-5
 spec: docs/specs/2026-10-09-readme-template-design.md
 plan: docs/plans/2026-10-09-readme-template.md
@@ -63,3 +65,10 @@ Design the verifiably README template, kept in verifiably/docs, for atoms, nodes
   provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-09T23:19:10Z (design/readme-template): review: impl round 1 — verdict: revise; findings: Important 1, Minor 5; reviewer: claude-code/claude-fable-5-1
 - 2026-10-09T23:21:24Z (design/readme-template): review: impl round 2 — verdict: accept; findings: none; reviewer: claude-code/claude-fable-5-1
+- 2026-10-09T23:21:25Z (main): resumed
+  provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-09T23:22:19Z (main): Rollout tasks filed: autonomy autonomy-548e33, science sci-fdacb1, nodes nodes-de0dc1, atoms atoms-cd15b4, beliefs beliefs-7f8ec2
+- 2026-10-09T23:22:57Z (main): done
+  provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-09T23:22:57Z (main): Spec and plan reviewed; family.toml, template and pre-push family check on main; five rollout tasks filed
+  provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
