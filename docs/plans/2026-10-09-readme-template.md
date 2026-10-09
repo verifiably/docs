@@ -902,7 +902,7 @@ Corpus(root).add(Node(id="topic:a", kind="topic", title="A", body="hi"))
 print(Corpus(root).get("topic:a").title)
 EOF
 )
-(cd ts && sed 's#"@verifiably/nodes"#"./src/index.ts"#' > readme_example.ts <<'EOF'
+(cd ts && npm run build && sed 's#"@verifiably/nodes"#"./dist/index.js"#' > readme_example.mjs <<'EOF'
 import { mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -912,11 +912,14 @@ const root = mkdtempSync(join(tmpdir(), "nodes-"));
 new Corpus(root).add(makeNode({ id: "topic:a", kind: "topic", title: "A", body: "hi" }));
 console.log(new Corpus(root).get("topic:a").title);
 EOF
-node readme_example.ts; rm readme_example.ts)
+node readme_example.mjs; status=$?; rm readme_example.mjs; exit $status); echo ts exit=$?
 ```
 
-Node 22.6 or later strips the types itself; the `sed` points the import at the source
-so the unpublished tree is what runs. Both print `A`.
+The source tree imports its siblings as `.js`, which Node cannot resolve to `.ts`, so
+the probe runs the package's own build (`tsc -p tsconfig.build.json`, into the
+gitignored `dist/`) and imports the compiled entry point that the package's `exports`
+name; the `sed` only redirects the package name there. The subshell exits with node's
+status, so the cleanup cannot mask a failure. Both print `A`, and `ts exit=0`.
 
 - [ ] **Step 4: `AGENTS.md`**
 
@@ -1173,13 +1176,24 @@ MIT, see [LICENSE](LICENSE).
 
 Before committing, run the example. It is `test_run_transaction_commits_the_world_chain_and_public_outcome`
 (`python/tests/test_coordinator_run.py`) reduced to a script with the production storage
-profile, which `beliefs` uses unpatched, so it needs no allowlist patch: write the
-block above to a file, and from a directory on the ext4 test volume (`ATOMS_TEST_VOLUME`,
-or the repository's `.atoms-test-volume`, per `python/tests/fs_support.py`) run
-`uv run --frozen --project python python <file>`. Expected output:
-`ChainOutcome.COMMITTED b'after'`. A `CapabilityUnavailable` refusal names the volume's
-mismatch and means the directory is not on the certified configuration, not that the
-example is wrong; rerun it from the test volume.
+profile, which `beliefs` uses unpatched, so it needs no allowlist patch. Write the block
+above, unindented, to `readme_example.py` at the worktree root, then run it with the
+worktree's Python project named by absolute path while the working directory is on the
+ext4 test volume (`ATOMS_TEST_VOLUME`, else `.atoms-test-volume` under the main
+checkout, as `python/tests/fs_support.py` resolves it; `uv --project` is relative to the
+working directory, so a bare `python` would not resolve from there):
+
+```bash
+W=$PWD && V=${ATOMS_TEST_VOLUME:-$(root atoms)/.atoms-test-volume} && mkdir -p "$V" \
+ && (cd "$V" && uv run --frozen --project "$W/python" python "$W/readme_example.py"); echo exit=$?
+rm readme_example.py
+```
+
+Expected output: `ChainOutcome.COMMITTED b'after'`, `exit=0`. A `CapabilityUnavailable`
+refusal names the volume's mismatch and means `$V` is not on the certified
+configuration, not that the example is wrong; set `ATOMS_TEST_VOLUME` to a directory
+that is and rerun. The temporary project the example creates stays under `$V`; the
+suite's own runs leave the same kind of directory there.
 
 - [ ] **Step 7: `AGENTS.md`**
 
@@ -1374,10 +1388,21 @@ row links the two repositories under `verifiably`.
 
 Before committing, run the example. It is the write in
 `python/tests/test_operation_port.py` (the `init_corpus_root`, `open_corpus`,
-`writer.add` sequence around line 253) reduced to a script: write the block above to a
-file and, from a directory on the certified test volume the suite uses
-(`python/tests/conftest.py`, the `certified_work` fixture), run
-`uv run --frozen --project python python <file>`. Expected output: `proposition:p`.
+`writer.add` sequence around line 253) reduced to a script. Write the block above,
+unindented, to `readme_example.py` at the worktree root, then run it with the
+worktree's Python project named by absolute path while the working directory is on the
+certified test volume the suite uses (`python/tests/conftest.py`, the `certified_work`
+fixture: `.lifecycle-wrappers-test` under the main checkout unless a `SCIENCE_CUT*_ROOT`
+variable names another; `uv --project` is relative to the working directory):
+
+```bash
+W=$PWD && V=$(root beliefs)/.lifecycle-wrappers-test && mkdir -p "$V" \
+ && (cd "$V" && uv run --frozen --project "$W/python" python "$W/readme_example.py"); echo exit=$?
+rm readme_example.py
+```
+
+Expected output: `proposition:p`, `exit=0`. A `CapabilityUnavailable` refusal means
+`$V` is not on the certified configuration; point it at a directory that is and rerun.
 
 - [ ] **Step 5: `AGENTS.md`**
 

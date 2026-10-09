@@ -8,7 +8,7 @@ complexity: high
 process: planned
 owner: design/readme-template
 created: 2026-10-09T18:36:19Z
-updated: 2026-10-09T22:52:51Z
+updated: 2026-10-09T23:03:45Z
 started: 2026-10-09T21:48:52Z
 depends: [ops-a0318e]
 parent: vdocs-0f0163
@@ -49,4 +49,11 @@ Design the verifiably README template, kept in verifiably/docs, for atoms, nodes
   provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-09T22:52:50Z (design/readme-template): Plan revised for round 1: autonomy guides backtick no untracked path and drop the ../ example; atoms rollout adds the test-one recipe; filed records are staged before the pathspec commit; each home task closes its child in its commit, the idea and the Task 4 child close before the design task; scratch probes run in one subshell each; every rollout verifies relative guide links inline; science mcp serve; runnable, test-derived usage examples for nodes (both packages), atoms and beliefs with a run step each
 - 2026-10-09T22:52:50Z (design/readme-template): parked (waiting on user, review): Re-review docs/plans/2026-10-09-readme-template.md (round 2) in .worktrees/readme-template; then the user confirms the execution method (recommended: native, executing-plans) and Tasks 1-4 run there
+  provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-09T23:00:32Z (design/readme-template): review: plan round 2 — verdict: revise; findings: P1 2; reviewer: codex
+- 2026-10-09T23:00:32Z (design/readme-template): Round 2: the original staging, closure, autonomy gate, scratch shell, MCP and focused-run fixes are present; revised autonomy guides pass ops-check in scratch. New blockers in usage verification: Rollout 3 imports ./src/index.ts with Node, whose internal .js imports are not mapped to .ts (reproduced ERR_MODULE_NOT_FOUND for src/errors.js); its cleanup also masks the Node exit status. Build using the existing TypeScript build and run the compiled entry point, preserving failure through cleanup. Rollouts 4 and 5 run from the certified volume but give uv --project python relative to that volume, so project discovery fails before the examples run (reproduced exit 2: Project directory python does not exist). Anchor --project and the example file to the explicit member worktree path while keeping cwd on the certified volume.
+- 2026-10-09T23:02:54Z (design/readme-template): resumed
+  provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-09T23:03:44Z (design/readme-template): Plan revised for round 2: the TypeScript probe builds dist/ and imports the compiled entry, exiting with node's status; the atoms and beliefs probes name the worktree's Python project and example file by absolute path while the working directory is on the certified volume
+- 2026-10-09T23:03:44Z (design/readme-template): parked (waiting on user, review): Re-review docs/plans/2026-10-09-readme-template.md (round 3) in .worktrees/readme-template; then the user confirms the execution method (recommended: native, executing-plans) and Tasks 1-4 run there
   provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
