@@ -8,7 +8,7 @@ complexity: high
 process: planned
 owner: design/readme-template
 created: 2026-10-09T18:36:19Z
-updated: 2026-10-09T23:10:39Z
+updated: 2026-10-09T23:21:24Z
 started: 2026-10-09T21:48:52Z
 depends: [ops-a0318e]
 parent: vdocs-0f0163
@@ -61,3 +61,5 @@ Design the verifiably README template, kept in verifiably/docs, for atoms, nodes
 - 2026-10-09T23:08:58Z (design/readme-template): Round 3 checks: the nodes example prints A when importing the existing compiled dist entry; a scratch uv frozen project run with absolute project and script paths preserves the volume working directory; Bash cleanup preserves a failing probe status. Native inline execution with executing-plans is the chosen method for the four home tasks. Execute fenced Bash snippets with Bash explicitly (status is reserved in zsh). No rollout or certified-volume transaction was run in this review.
 - 2026-10-09T23:10:39Z (design/readme-template): resumed
   provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-09T23:19:10Z (design/readme-template): review: impl round 1 — verdict: revise; findings: Important 1, Minor 5; reviewer: claude-code/claude-fable-5-1
+- 2026-10-09T23:21:24Z (design/readme-template): review: impl round 2 — verdict: accept; findings: none; reviewer: claude-code/claude-fable-5-1
