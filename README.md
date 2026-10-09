@@ -28,7 +28,7 @@ sibling repositories when they are checked out beside this one.
 |---|---|---|
 | `atoms` | Crash-safe filesystem effects | [README](https://github.com/verifiably/atoms/blob/main/README.md) |
 | `nodes` | Generic record and relation storage | [README](https://github.com/verifiably/nodes/blob/main/README.md) |
-| `beliefs` | The epistemic kernel | [contributor guide](https://github.com/verifiably/beliefs/blob/main/docs/guide/README.md) |
+| `beliefs` | The epistemic kernel: claims, runs, verification, belief | [contributor guide](https://github.com/verifiably/beliefs/blob/main/docs/guide/README.md) |
 | `science` | The daily surface: commands for people and agents | [README](https://github.com/verifiably/science/blob/main/README.md) |
 | `autonomy` | Running the daily surface unattended | [README](https://github.com/verifiably/autonomy/blob/main/README.md) |
 

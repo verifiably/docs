@@ -1,7 +1,9 @@
-# The verifiably family: its summary, members and README contract. ops-docs renders the
-# family region into every member's guides from the copy published as tools/family.toml;
-# `tools/ops-docs family check` at this repository's pre-push judges each member's copy.
-# Design: docs/specs/2026-10-09-readme-template-design.md §3; mechanism: ops
+# The verifiably family: its summary, members and README contract. The home is
+# verifiably/docs, where this file lives as family.toml; each member holds a published
+# copy as tools/family.toml, from which ops-docs renders the family region into the
+# member's guides, and the home's pre-push (`tools/ops-docs family check` there) judges
+# every member's copy against the home's. Design: verifiably/docs
+# docs/specs/2026-10-09-readme-template-design.md §3; mechanism: ops
 # docs/specs/2026-10-09-family-guide-templates-design.md.
 name = "verifiably"
 summary = """
