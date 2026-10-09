@@ -1,6 +1,6 @@
 # verifiably README template — design
 
-**Status:** draft 2026-10-09, for user review. Task: vdocs-fff787, under the goal
+**Status:** draft 2026-10-09, revised after review round 1; for user review. Task: vdocs-fff787, under the goal
 vdocs-0f0163. Source: the brief `docs/notes/2026-10-09-readme-template-brief.md` and the
 user's answers of 2026-10-09 recorded there (§5). Builds on ops's family guide templates
 design (ops `docs/specs/2026-10-09-family-guide-templates-design.md`, implemented in
@@ -257,7 +257,7 @@ within 80 characters; abstracts within 400 and three sentences.
 
 | Member | purpose | abstract | authority |
 |---|---|---|---|
-| atoms | A recoverable filesystem effect engine: the crash-safe substrate | Atomic multi-path filesystem mutation with write-ahead journaling, rollback and post-crash recovery, over an OS-neutral capability vocabulary: a write either lands completely or leaves a state that can be classified from durable evidence and safely completed, rolled back or halted. The physical substrate under nodes; beliefs is its direct consumer. | `docs/plans/2026-07-23-recoverable-fs-effect-engine-design.md` |
+| atoms | A recoverable filesystem effect engine: the crash-safe substrate | Atomic multi-path filesystem mutation with write-ahead journaling, rollback and post-crash recovery, over an OS-neutral capability vocabulary: a write either lands completely or leaves a state that can be classified from durable evidence and safely completed, rolled back or halted. Conceptually the substrate below nodes, which does not yet adopt it directly; beliefs is its direct consumer. | `docs/plans/2026-07-23-recoverable-fs-effect-engine-design.md` |
 | nodes | A problem-agnostic knowledge substrate: typed markdown nodes | Entities as markdown files, typed relations, structural shapes and rebuildable derived indexes, implemented in Python and TypeScript over one shared on-disk format. The kernel is domain-free; domain profiles such as beliefs and mindful v6 register their own kinds on it. | `docs/STANDARD.md` |
 | beliefs | The epistemic kernel of verifiably: recording scientific belief | Records scientific belief and the evidence it rests on: typed claims, datasets and holdings, analysis runs and their verification, belief computed on request under a named policy, the world index, additive correction and the mutation log, each guaranteed by a frozen conformance cut. Built on nodes and atoms; consumed by science and autonomy. | `docs/designs/2026-08-02-epistemic-kernel-design.md`, `docs/designs/2026-08-03-redesign-adoption-ledger.md` |
 | science | The daily surface of verifiably: the layer people and agents use | Harness-neutral commands and skills over the beliefs kernel, served as a CLI and over MCP, with generated harness adapters (Claude Code first), the derived work queue and publish. It owns no kinds and no storage: every durable thing is a governed record in a beliefs corpus, and every write is a kernel act. | `docs/specs/2026-08-31-command-framework-design.md` |
@@ -275,10 +275,11 @@ each member project; the goal vdocs-0f0163 depends on the five.
 1. **Home (this repository).** `family.toml` (§3); `templates/README.md` (§4), with
    its guidance as HTML comments; `family check` added to the pre-push recipe; this
    README's and `AGENTS.md`'s layout lines name the two files; the README's rules note
-   that a layer description changes in the table and the label together. Then
-   `tools/ops-docs family publish`, which writes `tools/family.toml` into every reachable
-   member (a copy only, until the member adopts). The home's push waits for step 6: its
-   pre-push `family check` reports `missing` until every member has committed its copy.
+   that a layer description changes in the table and the label together. No
+   `family publish`: it resolves members through the tasks registry to their main
+   checkouts, where the rollouts do not work (below). The home's push waits for step 6:
+   its pre-push `family check` reports `missing` until every member has committed its
+   copy.
 2. **autonomy** (19 lines, nothing built): vendors `tools/tt`, `tools/ops-check` and
    `tools/ops-docs` from ops main, takes ops's template `justfile` and `.githooks` with
    no-op test commands so its pre-commit runs `ops-docs check`; `identity.toml`;
@@ -298,12 +299,21 @@ each member project; the goal vdocs-0f0163 depends on the five.
    Depends on beliefs-c92ca9. Then the home runs `family check`, pushes, and the
    outcome is noted on vdocs-910898 and on ops's project guides design task record.
 
-Within a member, the order is: vendor `tools/ops-docs`, write `identity.toml`, copy the
-template over the README's head; from the home, `family publish` (which now finds the
-member adopted and runs its `ops-docs write --init`, inserting both regions); then the
-prose and moves; then `just check` in the member and one commit, with the member's
-status-guard or link tests green. The home's `family publish` never commits; the
-member's commit carries `tools/family.toml` with the rest.
+Each member's rollout runs in that member's task worktree, so the family copy reaches
+it by hand, not by `family publish`: publish writes only into registered main checkouts,
+and it refuses a member whose guides or family copy are uncommitted, which an adoption
+in progress always is (a first copy is untracked until committed). Within a member, the
+order is: vendor `tools/ops-docs` from ops main; write the home's committed family file
+into the worktree, byte for byte
+(`git -C <home> show HEAD:family.toml > tools/family.toml`); write `identity.toml`;
+copy the template over the README's head; run the member's own
+`tools/ops-docs write --init`, which inserts and renders both regions in both guides;
+then the prose and moves; then `just check` in the member and one commit carrying
+`tools/family.toml` with the rest, with the member's status-guard or link tests green;
+then merge to the member's main. The home's `family check` reads each member's main
+at `HEAD`, so it passes once the five merges land. `family publish` is for later edits
+to `family.toml`, run from the home against adopted members whose main checkouts are
+clean, which is the precondition it checks.
 
 ## 10. Checks
 

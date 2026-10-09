@@ -8,7 +8,7 @@ complexity: high
 process: planned
 owner: design/readme-template
 created: 2026-10-09T18:36:19Z
-updated: 2026-10-09T21:56:39Z
+updated: 2026-10-09T22:14:26Z
 started: 2026-10-09T21:48:52Z
 depends: [ops-a0318e]
 parent: vdocs-0f0163
@@ -27,4 +27,12 @@ Design the verifiably README template, kept in verifiably/docs, for atoms, nodes
   provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-09T21:56:23Z (design/readme-template): Design choices in the draft spec: home not a member; lead purpose+abstract; sections Install, Usage, Layout, Documentation, License; no status region; default AGENTS contract; atoms roadmap to docs/plans/README.md (status test follows), beliefs design table to docs/designs/README.md, status prose deleted; rollout home first then autonomy, science, nodes, atoms, beliefs, one task per member project
 - 2026-10-09T21:56:39Z (design/readme-template): parked (waiting on user, review): User reviews docs/specs/2026-10-09-readme-template-design.md in .worktrees/readme-template; on approval, write the implementation plan there with writing-plans (home steps here, one rollout task per member project)
+  provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-09T22:10:52Z (design/readme-template): review: spec round 1 — verdict: revise; findings: P1 2, P2 1; reviewer: codex
+- 2026-10-09T22:10:52Z (design/readme-template): Spec review findings: §9 family publish resolves registered main checkouts rather than rollout worktrees; §9 member adoption edits README before publication, which refuses dirty guides (and the initial family copy is itself uncommitted); §8 atoms abstract omits the existing explicit qualification that direct nodes adoption is deferred. Recommend publishing once to clean registered checkouts, transferring the committed-home family bytes into each isolated rollout worktree, rendering locally with ops-docs write --init, and locally integrating before the home family check; qualify the atoms/nodes relationship.
+- 2026-10-09T22:11:00Z (design/readme-template): Clarification to the review recommendation: skip the initial broadcast into main checkouts for adoption. Copy the home HEAD:family.toml bytes directly into each isolated member worktree, render there with ops-docs write --init, then commit and integrate locally before family check. Reserve family publish for subsequent updates to clean adopted checkouts under an explicitly authorized workspace policy.
+- 2026-10-09T22:14:18Z (design/readme-template): resumed
+  provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-09T22:14:25Z (design/readme-template): Spec revised for round 1: rollout drops family publish (it targets registered main checkouts and refuses dirty guides); each member worktree copies the home's HEAD:family.toml and renders with its own ops-docs write --init, one adoption commit, home family check after the merges; publish reserved for later family.toml edits. Atoms abstract keeps the deferred direct-nodes-adoption qualification.
+- 2026-10-09T22:14:25Z (design/readme-template): parked (waiting on user, review): Re-review docs/specs/2026-10-09-readme-template-design.md (round 2) in .worktrees/readme-template; on approval, write the implementation plan there with writing-plans
   provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
