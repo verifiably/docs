@@ -8,7 +8,7 @@ complexity: high
 process: planned
 owner: design/readme-template
 created: 2026-10-09T18:36:19Z
-updated: 2026-10-09T23:03:45Z
+updated: 2026-10-09T23:10:39Z
 started: 2026-10-09T21:48:52Z
 depends: [ops-a0318e]
 parent: vdocs-0f0163
@@ -56,4 +56,8 @@ Design the verifiably README template, kept in verifiably/docs, for atoms, nodes
   provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-09T23:03:44Z (design/readme-template): Plan revised for round 2: the TypeScript probe builds dist/ and imports the compiled entry, exiting with node's status; the atoms and beliefs probes name the worktree's Python project and example file by absolute path while the working directory is on the certified volume
 - 2026-10-09T23:03:44Z (design/readme-template): parked (waiting on user, review): Re-review docs/plans/2026-10-09-readme-template.md (round 3) in .worktrees/readme-template; then the user confirms the execution method (recommended: native, executing-plans) and Tasks 1-4 run there
+  provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-09T23:08:58Z (design/readme-template): review: plan round 3 — verdict: accept; findings: none; reviewer: codex
+- 2026-10-09T23:08:58Z (design/readme-template): Round 3 checks: the nodes example prints A when importing the existing compiled dist entry; a scratch uv frozen project run with absolute project and script paths preserves the volume working directory; Bash cleanup preserves a failing probe status. Native inline execution with executing-plans is the chosen method for the four home tasks. Execute fenced Bash snippets with Bash explicitly (status is reserved in zsh). No rollout or certified-volume transaction was run in this review.
+- 2026-10-09T23:10:39Z (design/readme-template): resumed
   provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
