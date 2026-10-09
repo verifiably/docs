@@ -8,7 +8,7 @@ complexity: high
 process: planned
 owner: design/readme-template
 created: 2026-10-09T18:36:19Z
-updated: 2026-10-09T22:30:39Z
+updated: 2026-10-09T22:52:51Z
 started: 2026-10-09T21:48:52Z
 depends: [ops-a0318e]
 parent: vdocs-0f0163
@@ -42,4 +42,11 @@ Design the verifiably README template, kept in verifiably/docs, for atoms, nodes
   provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-09T22:30:38Z (design/readme-template): Plan drafted: four home tasks here (family.toml, template plus link-checker skip, pre-push family check and guides, file the five rollout tasks and close) and five member rollout recipes; plan review next
 - 2026-10-09T22:30:38Z (design/readme-template): parked (waiting on user, review): User reviews docs/plans/2026-10-09-readme-template.md in .worktrees/readme-template and picks an execution method (recommended: native, executing-plans); then execute Tasks 1-4 there
+  provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-09T22:36:51Z (design/readme-template): review: plan round 1 — verdict: revise; findings: P1 4, P2 4; reviewer: codex
+- 2026-10-09T22:36:51Z (design/readme-template): Plan review P1 findings: Rollout 1 guides fail ops-check on future docs/specs/ and docs/plans/ and the quoted ../beliefs path (reproduced in scratch); Rollout 4 calls test-one but atoms justfile has no such recipe; Task 4 commits new task records without git add (reproduced pathspec error); Task 4 closes parent vdocs-fff787 before its own child vdocs-3474e8 is closed, and final goal closeout leaves idea child vdocs-910898 open. P2 findings: scratch probes depend on persistent and inconsistent shell cwd; no member gate checks README Markdown links although Review Focus 5 claims it does; science mcp example omits required serve positional argument; Usage lacks the spec-required runnable library examples for atoms, beliefs and TypeScript nodes.
+- 2026-10-09T22:48:09Z (design/readme-template): resumed
+  provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-09T22:52:50Z (design/readme-template): Plan revised for round 1: autonomy guides backtick no untracked path and drop the ../ example; atoms rollout adds the test-one recipe; filed records are staged before the pathspec commit; each home task closes its child in its commit, the idea and the Task 4 child close before the design task; scratch probes run in one subshell each; every rollout verifies relative guide links inline; science mcp serve; runnable, test-derived usage examples for nodes (both packages), atoms and beliefs with a run step each
+- 2026-10-09T22:52:50Z (design/readme-template): parked (waiting on user, review): Re-review docs/plans/2026-10-09-readme-template.md (round 2) in .worktrees/readme-template; then the user confirms the execution method (recommended: native, executing-plans) and Tasks 1-4 run there
   provenance: {"harness_session":"claude-code:cb0d9bf1-6fbf-40dd-a649-5096038c67d2","harness_session_source":"CLAUDE_CODE_SESSION_ID"}

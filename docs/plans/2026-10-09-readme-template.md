@@ -60,7 +60,7 @@ round 2). Its mechanism is ops `docs/specs/2026-10-09-family-guide-templates-des
    step 5.
 5. The template's relative licence link, read by this repository's link checker:
    it must be skipped here and verified in a member. Pinned in Task 2, steps 2 and 3,
-   and every rollout's `just check`.
+   and the link check in every rollout's common step 8.
 
 ## Conventions
 
@@ -137,7 +137,7 @@ Expected: no output, `exit=0`.
 Run the render probe from the scratchpad (it loads the vendored script as a module):
 
 ```bash
-S=$(mktemp -d) && cp tools/ops-docs family.toml "$S/" && cd "$S" && python3 - <<'EOF'
+( S=$(mktemp -d) && cp tools/ops-docs family.toml "$S/" && cd "$S" && python3 - <<'EOF'
 import pathlib
 ns = {}
 src = pathlib.Path("ops-docs").read_text().replace('if __name__ == "__main__":', 'if False:')
@@ -148,7 +148,10 @@ assert [m["name"] for m in fam["members"]] == ["atoms", "nodes", "beliefs", "sci
 assert ns["contract_of"](fam)["readme"]["sections"] == ["Install", "Usage", "Layout", "Documentation", "License"]
 print(ns["render_family"](fam, {"name": "science"}, "readme", "tools/family.toml"))
 EOF
+)
 ```
+
+The subshell leaves the working directory where it was.
 
 Expected: the region prints with `**science**` bold and the other four as links whose
 titles are their labels.
@@ -156,7 +159,8 @@ titles are their labels.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add family.toml
+tasks done vdocs-d68fd2 "family.toml declared and validated by ops-docs check"
+git add family.toml tasks/
 git commit -m "feat: declare the verifiably family and its README contract"
 ```
 
@@ -246,40 +250,36 @@ Build a scratch member from the template, ops's `AGENTS.md` template and this fa
 file, and run its check; then break the order and see it refuse:
 
 ```bash
-S=$(mktemp -d) && cd "$S" && git init -q . && mkdir tools \
- && cp "$OLDPWD/tools/ops-docs" tools/ && cp "$OLDPWD/family.toml" tools/family.toml \
- && cp "$OLDPWD/templates/README.md" README.md \
- && cp $OPS/templates/AGENTS.md AGENTS.md \
+( H=$PWD && S=$(mktemp -d) && cd "$S" && git init -q . && mkdir tools \
+ && cp "$H/tools/ops-docs" tools/ && cp "$H/family.toml" tools/family.toml \
+ && cp "$H/templates/README.md" README.md \
+ && cp "$OPS/templates/AGENTS.md" AGENTS.md \
  && printf 'name = "science"\naliases = []\npurpose = "Probe"\nabstract = "A probe."\nauthority = []\nsubsystems = []\n' > identity.toml \
  && sed -i 's/^# <name>$/# science/; s/^# <name> — agent guide$/# science — agent guide/' README.md AGENTS.md \
  && sed -i '/^<!-- verifiably README template/,/^Delete this comment in the copy. -->$/d' README.md \
  && python3 tools/ops-docs write --init && git add -A && git commit -qm probe \
- && python3 tools/ops-docs check; echo exit=$?
-```
-
-Expected: `exit=0`, and `README.md` now shows `*Probe*`, `A probe.`, the family region
-with `**science**` bold, then the five sections.
-
-Then swap the last two sections and check again:
-
-```bash
-python3 - <<'EOF'
+ && python3 tools/ops-docs check; echo exit=$? \
+ && grep -n -E '^\*Probe\*$|^\*\*science\*\*|^## ' README.md \
+ && python3 - <<'EOF'
 import pathlib
 p = pathlib.Path("README.md"); t = p.read_text()
 head, doc = t.split("## Documentation\n", 1)
 doc, lic = doc.split("## License\n", 1)
 p.write_text(head + "## License\n" + lic + "## Documentation\n" + doc)
 EOF
-python3 tools/ops-docs check; echo exit=$?
+python3 tools/ops-docs check; echo swapped exit=$? )
 ```
 
-Expected: a finding naming the section order, `exit=1`. Leave the scratch directory;
-it is under `mktemp`.
+One subshell, so the scratch directory and the working directory both survive the
+sequence. Expected: `exit=0`, then the grep shows `*Probe*`, `**science**` in the nav
+and the five `## ` headings in contract order, then a finding naming the section order
+and `swapped exit=1`. The scratch directory is under `mktemp` and is left alone.
 
 - [ ] **Step 5: Commit**
 
 ```bash
-cd - && git add templates/README.md tools/check_links.py
+tasks done vdocs-3432ce "templates/README.md; link checker skips templates/; contract probe passed"
+git add templates/README.md tools/check_links.py tasks/
 git commit -m "feat: README template for family members; link checker skips templates/"
 ```
 
@@ -357,7 +357,8 @@ This is the state until Rollouts 1–5 land; the home is not pushed before then.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add justfile README.md AGENTS.md
+tasks done vdocs-47d656 "family check at pre-push; guides name family.toml and the template"
+git add justfile README.md AGENTS.md tasks/
 git commit -m "feat: family check at pre-push; guides name family.toml and the template"
 ```
 
@@ -368,8 +369,9 @@ git commit -m "feat: family check at pre-push; guides name family.toml and the t
 **Files:**
 - Create: one task record in each of autonomy, science, nodes, atoms, beliefs (their
   registered checkouts, via `tasks add --project`)
-- Modify: `tasks/vdocs-fff787.md`, `tasks/vdocs-0f0163.md`, `tasks/vdocs-910898.md`
-  (through the CLI)
+- Modify: `tasks/vdocs-fff787.md`, `tasks/vdocs-3474e8.md`, `tasks/vdocs-0f0163.md`,
+  `tasks/vdocs-910898.md` (through the CLI). `done` refuses a task with an open child, so
+  the Task 4 child and the idea close before the design task, and the goal closes last.
 
 **Interfaces:**
 - Consumes: the merged home branch (Tasks 1–3 on `main`), so that each rollout's
@@ -433,6 +435,7 @@ this host; every member resolved on 2026-10-09 (`tasks resolve --json atoms node
 In each member's main checkout:
 
 ```bash
+git -C "$(root <prefix>)" add tasks/<id>.md
 git -C "$(root <prefix>)" commit -m "chore(tasks): file the README template rollout" -- tasks/<id>.md
 ```
 
@@ -443,6 +446,8 @@ own checks; a hook that refuses is reported, not bypassed.
 
 ```bash
 tasks note vdocs-910898 "Design done: spec docs/specs/2026-10-09-readme-template-design.md, plan docs/plans/2026-10-09-readme-template.md; one rollout task per member filed, the goal vdocs-0f0163 depends on them"
+tasks done vdocs-3474e8 "five rollout tasks filed and wired; records committed in their projects"
+tasks done vdocs-910898 "Audited, designed and filed: spec and plan in vdocs-fff787, one rollout task per member"
 tasks done vdocs-fff787 "Spec and plan reviewed; family.toml, template and pre-push family check on main; five rollout tasks filed"
 git add tasks/
 git commit -m "chore(tasks): close the README template design; goal depends on the five rollouts"
@@ -481,7 +486,22 @@ this order:
    `python3 tools/ops-docs check; echo exit=$?` expecting `exit=0`.
 8. Grep the guards:
    `grep -n -E 'Science|~/d/|\]\(\.\./' README.md AGENTS.md` expecting no output, except
-   for rule identities such as `science.identity.v1` where a rollout names them.
+   for rule identities such as `science.identity.v1` where a rollout names them. Then
+   verify every relative Markdown link in both guides, which neither the member's gate
+   nor ops-check does (ops-check reads backticked paths, not links):
+
+   ```bash
+   python3 - <<'EOF'
+   import re, pathlib, sys
+   bad = [(f, m.group(1)) for f in ("README.md", "AGENTS.md")
+          for m in re.finditer(r"(?<!!)\[[^]]*]\(([^)\s#]+)", pathlib.Path(f).read_text())
+          if not m.group(1).startswith("https://") and not pathlib.Path(m.group(1)).exists()]
+   print(bad or "links ok"); sys.exit(1 if bad else 0)
+   EOF
+   ```
+
+   expecting `links ok`. The `https://github.com/verifiably/...` links are verified by
+   the home's `just check` after the merge (step 10), which reads the siblings.
 9. The member's own gate: `just check; echo exit=$?` expecting `exit=0` (it now runs
    `ops-docs check`), and the tests each rollout names.
 10. One commit, with the absorbed task closed in it where a rollout says so; merge to
@@ -563,7 +583,8 @@ subsystems = []
   — the governing design, in the kernel repository: §7 is this layer, §8 orders the
   sub-projects. Work here starts at sub-project #6, the envelope, after the command
   framework, and ends with #7, the loop and the priority function (`science.priority.v1`).
-- `docs/specs/`, `docs/plans/` — this repository's own designs and plans, once written.
+- This repository's own designs and plans will live under docs/ (specs and plans) once
+  written; nothing is there today.
 - This layer is split from `science` on code-lineage independence: the envelope must
   not share a package with the surface it constrains, so its only seam is `science`'s
   commands as tools.
@@ -589,7 +610,7 @@ runs it. Every test recipe is `true` until the envelope is built; replace them i
 
 ## Layout
 
-- `docs/specs/`, `docs/plans/` — designs and plans for this layer.
+- docs/ — designs (specs) and plans for this layer, once written; empty today.
 - `tools/` — `tt`, `ops-check`, `ops-docs` vendored from ops; `family.toml` published
   from verifiably/docs.
 
@@ -598,7 +619,8 @@ runs it. Every test recipe is `true` until the envelope is built; replace them i
 - No kernel import. This layer reaches `beliefs` only through `science`'s commands as
   tools; a private kernel path would let the envelope bypass the surface it constrains.
 - The governing design is in the kernel repository (README, Documentation); a design
-  written here cites it by its GitHub URL, never a relative `../beliefs` path.
+  written here cites it by its GitHub URL, never by a relative path into the sibling
+  checkout, which breaks on GitHub.
 ```
 
 - [ ] **Step 5: Render, check, close the absorbed task, commit**
@@ -609,8 +631,10 @@ grep -n -E 'Science|~/d/|\]\(\.\./' README.md AGENTS.md; echo grep=$?
 just check; echo exit=$?
 ```
 
-Expected: `exit=0`, `grep=1` (no matches), `exit=0`. The README's family region shows
-`**autonomy**` bold.
+Expected: `exit=0`, `grep=1` (no matches), `exit=0`. `just check` includes ops-check,
+whose backtick rule treats every backticked path in the guides as a claim that it is
+tracked: the two guides above backtick none that is not. The README's family region
+shows `**autonomy**` bold.
 
 ```bash
 tasks done autonomy-6e0015 "Absorbed by the README template rollout: the family region links the overview and the stack is called verifiably"
@@ -673,8 +697,8 @@ beside it as an editable path dependency:
 
 ## Usage
 
-`science` is the CLI (`uv run science <command>` under `python/`); `science mcp` serves
-the same commands over MCP on stdio. The command surface, from `tools/cli.toml`:
+`science` is the CLI (`uv run science <command>` under `python/`); `science mcp serve`
+serves the same commands over MCP on stdio. The command surface, from `tools/cli.toml`:
 
 - The belief path: `dataset`, `claim`, `spec`, `run`, `assess`, `verify`, `belief`,
   `next`.
@@ -813,15 +837,31 @@ TypeScript ([`@verifiably/nodes` on npm](https://www.npmjs.com/package/@verifiab
 
 ## Usage
 
-The Python package ships the `nodes.core` subpackage of the `nodes` namespace:
+A corpus is a directory; add a node, and a fresh `Corpus` over the same directory reads
+it back from disk. Python:
 
-    import nodes.core
+    import tempfile
+    from pathlib import Path
+    from nodes.core.corpus import Corpus
+    from nodes.core.node import Node
 
-`Corpus.read_and_check(registry=None)` returns `(nodes, findings)` from one fresh read in
-manifest-path order; inspect the findings before using the nodes. The TypeScript
-package exports the same kernel (`Corpus` with `add`/`get`/`rename`/`delete`, graph and
-membership queries, `search`, `check`) with a camelCase API over the identical on-disk
-format.
+    root = Path(tempfile.mkdtemp())
+    Corpus(root).add(Node(id="topic:a", kind="topic", title="A", body="hi"))
+    print(Corpus(root).get("topic:a").title)  # A
+
+TypeScript, the same corpus format with a camelCase API:
+
+    import { mkdtempSync } from "node:fs";
+    import { tmpdir } from "node:os";
+    import { join } from "node:path";
+    import { Corpus, makeNode } from "@verifiably/nodes";
+
+    const root = mkdtempSync(join(tmpdir(), "nodes-"));
+    new Corpus(root).add(makeNode({ id: "topic:a", kind: "topic", title: "A", body: "hi" }));
+    console.log(new Corpus(root).get("topic:a").title); // A
+
+`Corpus.read_and_check()` returns every node with the findings of a structural check;
+inspect the findings before trusting the nodes.
 
 ## Layout
 
@@ -846,9 +886,37 @@ format.
 MIT, see [LICENSE](LICENSE).
 ```
 
-Before committing, confirm the TypeScript names against `ts/src/index.ts` (or the
-package's entry in `ts/package.json`): `grep -n 'export' ts/src/index.ts | head`. If
-`Corpus` is not exported under that name, use the exported name.
+Before committing, run both examples. They are the round-trip tests
+`python/tests/test_corpus.py` (`test_add_get_roundtrip`) and `ts/tests/corpus.test.ts`
+("add then get round-trips") reduced to a script, so each must print `A`:
+
+```bash
+(cd python && uv run --frozen python - <<'EOF'
+import tempfile
+from pathlib import Path
+from nodes.core.corpus import Corpus
+from nodes.core.node import Node
+
+root = Path(tempfile.mkdtemp())
+Corpus(root).add(Node(id="topic:a", kind="topic", title="A", body="hi"))
+print(Corpus(root).get("topic:a").title)
+EOF
+)
+(cd ts && sed 's#"@verifiably/nodes"#"./src/index.ts"#' > readme_example.ts <<'EOF'
+import { mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { Corpus, makeNode } from "@verifiably/nodes";
+
+const root = mkdtempSync(join(tmpdir(), "nodes-"));
+new Corpus(root).add(makeNode({ id: "topic:a", kind: "topic", title: "A", body: "hi" }));
+console.log(new Corpus(root).get("topic:a").title);
+EOF
+node readme_example.ts; rm readme_example.ts)
+```
+
+Node 22.6 or later strips the types itself; the `sed` points the import at the source
+so the unpublished tree is what runs. Both print `A`.
 
 - [ ] **Step 4: `AGENTS.md`**
 
@@ -914,7 +982,7 @@ Expected: all `exit=0`, `grep=1`.
 
 **Files:**
 - Create: `tools/ops-docs`, `tools/family.toml`, `identity.toml`, `docs/plans/README.md`
-- Modify: `README.md`, `AGENTS.md`, `justfile` (`check_cmd`),
+- Modify: `README.md`, `AGENTS.md`, `justfile` (`check_cmd`, the `test-one` recipe),
   `python/tests/test_docs_status.py` (`status_regions`, the two entry-document tests)
 
 - [ ] **Step 1: Tool, family copy, gate**
@@ -927,6 +995,23 @@ cmp tools/family.toml $DOCS/family.toml && echo same
 
 In `justfile`:
 `check_cmd := "python3 tools/ops-check && python3 tools/ops-docs check && (cd python && uv run --frozen ruff check && uv run --frozen pyright) && tasks check"`.
+
+The justfile has no `test-one` recipe, and the focused roadmap checks below need one
+(testmon would skip a test whose only changed input is a Markdown file). Add, from
+ops's `templates/justfile`: `set positional-arguments` on the line after `set quiet`;
+after `test_cmd`, the runner `one_cmd := "cd python && uv run --frozen pytest"`; and
+after the `test-fast` recipe:
+
+```just
+# One file, one test, or a filter, while working on it. Needs at least one argument;
+# the whole suite is `test`. The sh -c string never holds the arguments, so quotes, $
+# and globs in them reach the runner untouched.
+test-one +args:
+    {{tt}} test-one -- sh -c '{{one_cmd}} "$@" 2>&1' test-one "$@"
+```
+
+Run: `just test-one tests/test_docs_status.py; echo exit=$?` expecting `exit=0` before
+any other change: the recipe works on the tree as it is.
 
 - [ ] **Step 2: Identity**
 
@@ -1028,11 +1113,39 @@ other tuple fails closed.
 
 ## Usage
 
-`atoms.coordinator` is the public surface: `run_transaction` executes an approved spec
-against project paths and converges after a crash in a fresh process, and
-`commands.read_preimage(..., txid, path, max_bytes=...)` returns verified, owned bytes
-for a settled transaction's registered initial state. The smallest end-to-end example
-is the one the exerciser runs: see `python/tests/test_exerciser.py`.
+`atoms.coordinator.commands` is the public surface. A project root is registered once;
+`run_transaction` then executes a compiled spec against it and converges after a crash
+in a fresh process. Run this from a directory on a certified ext4 volume (any other
+configuration fails closed with `CapabilityUnavailable`, by design):
+
+    import hashlib, io, tempfile
+    from pathlib import Path
+    from atoms.coordinator.commands import register_root, run_transaction
+    from atoms.core.effects import CreateFileNoClobber
+    from atoms.core.fingerprint import ABSENT, FileState
+    from atoms.core.spec import build_spec
+    from atoms.fs.platform import select_backend
+    from atoms.fs.volume import StorageProfile
+
+    def sha(b): return "sha256:" + hashlib.sha256(b).hexdigest()
+    class Payloads:  # a PayloadSource: a fresh stream per call, KeyError when unknown
+        def __init__(self, m): self.m = m
+        def open(self, digest): return io.BytesIO(self.m[digest])
+
+    work = Path(tempfile.mkdtemp(dir=Path.cwd())).resolve()
+    project, metadata = work / "project", str(work / "project.metadata")
+    (project / "d").mkdir(parents=True)
+    backend, storage = select_backend(), StorageProfile(profile_id="flush-honoring-disk.v1")
+    register_root(backend, str(project), metadata, storage, b"root", ())
+    body = b"after"; post = FileState(content_hash=sha(body), mode=0o644, byte_len=len(body))
+    spec = build_spec(consumer_tag="example", intent_digest=sha(b"example intent"),
+        initial_surface={"d/f.txt": ABSENT}, final_surface={"d/f.txt": post},
+        effects=[CreateFileNoClobber(effect_id="e1", path="d/f.txt", post=post)])
+    out = run_transaction(backend, str(project), metadata, storage, spec, Payloads({sha(body): body}))
+    print(out.outcome, (project / "d/f.txt").read_bytes())  # ChainOutcome.COMMITTED b'after'
+
+`read_preimage(backend, project, metadata, storage, txid, path, max_bytes=...)` then
+returns the bytes a registered path held before a settled transaction.
 
 ## Layout
 
@@ -1058,9 +1171,15 @@ is the one the exerciser runs: see `python/tests/test_exerciser.py`.
 MIT, see [LICENSE](LICENSE).
 ```
 
-Before committing, confirm the `Usage` names against the package:
-`grep -rn 'def run_transaction\|def read_preimage' python/src/atoms/coordinator/` must
-find both; if a name differs, use the package's.
+Before committing, run the example. It is `test_run_transaction_commits_the_world_chain_and_public_outcome`
+(`python/tests/test_coordinator_run.py`) reduced to a script with the production storage
+profile, which `beliefs` uses unpatched, so it needs no allowlist patch: write the
+block above to a file, and from a directory on the ext4 test volume (`ATOMS_TEST_VOLUME`,
+or the repository's `.atoms-test-volume`, per `python/tests/fs_support.py`) run
+`uv run --frozen --project python python <file>`. Expected output:
+`ChainOutcome.COMMITTED b'after'`. A `CapabilityUnavailable` refusal names the volume's
+mismatch and means the directory is not on the certified configuration, not that the
+example is wrong; rerun it from the test volume.
 
 - [ ] **Step 7: `AGENTS.md`**
 
@@ -1196,9 +1315,27 @@ reading order.
 
 ## Usage
 
-The kernel is a library; the `science` CLI is its daily surface. For a direct walk
-through it, the [mm30 reproduction](docs/designs/2026-09-05-mm30-reproduction.md)
-pushes one real proposition from held data to the belief evaluator's answer.
+The kernel is a library; the `science` CLI is its daily surface. Directly: register a
+corpus root under an authority, open it under the shipped base profile, and add one
+proposition. The root must sit on a certified ext4 volume, as `atoms` requires:
+
+    import tempfile
+    from pathlib import Path
+    from beliefs import stored
+    from beliefs.permit import Authority, WritePermit
+    from beliefs.profile import shipped_base
+    from beliefs.root import init_corpus_root, open_corpus
+
+    authority = Authority(WritePermit.full(), "readme-example")
+    root = Path(tempfile.mkdtemp(dir=Path.cwd())) / "corpus"
+    init_corpus_root(root, authority=authority)
+    writer = open_corpus(root, authority=authority, profile=shipped_base())
+    node = writer.add(stored.proposition_node("p", title="p", claim={"operator": "affects"}))
+    print(writer.read_view.get(node.id).id)  # proposition:p
+
+For a whole walk from held data to a belief, the
+[mm30 reproduction](docs/designs/2026-09-05-mm30-reproduction.md) drives the kernel
+the same way.
 
 ## Layout
 
@@ -1234,6 +1371,13 @@ paragraph, the overview pointer), `## The designs` and the whole `## Status` tal
 gone: the identity and family regions, the designs index and the ledger link replace
 them. The `khughitt/nodes` and `khughitt/atoms` links disappear with the head; the nav
 row links the two repositories under `verifiably`.
+
+Before committing, run the example. It is the write in
+`python/tests/test_operation_port.py` (the `init_corpus_root`, `open_corpus`,
+`writer.add` sequence around line 253) reduced to a script: write the block above to a
+file and, from a directory on the certified test volume the suite uses
+(`python/tests/conftest.py`, the `certified_work` fixture), run
+`uv run --frozen --project python python <file>`. Expected output: `proposition:p`.
 
 - [ ] **Step 5: `AGENTS.md`**
 
