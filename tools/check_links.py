@@ -6,6 +6,8 @@ heading there. A link of the form `https://github.com/verifiably/<repo>/blob/mai
 (or `/tree/main/`) is checked the same way against the sibling checkout `../<repo>`,
 because this repository exists to point into the others and those pointers are what rot.
 A sibling that is not checked out on this machine is reported and skipped, never passed.
+Files under `templates/` are skipped: a template's relative links resolve in the
+repository that copies it, not here.
 
 Exit status: 0 when every checked link resolves, 1 otherwise.
 """
@@ -23,7 +25,7 @@ LINK = re.compile(r"(?<!!)\[[^]]*]\(([^)\s]+)(?:\s[^)]*)?\)")
 HEADING = re.compile(r"^#{1,6}\s+(.*?)\s*$", re.MULTILINE)
 FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
 GITHUB = re.compile(r"\Ahttps://github\.com/verifiably/([\w.-]+)/(?:blob|tree)/main/(.+)\Z")
-SKIP_DIRS = {".git", "tasks", ".worktrees", ".tt"}
+SKIP_DIRS = {".git", "tasks", ".worktrees", ".tt", "templates"}
 
 
 def heading_slugs(text: str) -> set[str]:
