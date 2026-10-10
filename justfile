@@ -1,6 +1,7 @@
 # Front door for tests. Copy to the project root and fill in the three commands below.
 # Inner loop: `just test-fast` (affected-only). Full suite: `just test`.
-# Gates: `just check` at pre-commit, `just gate` at pre-push and in CI.
+# Gates: `just check` at pre-commit, `just gate` in CI; pre-push runs the gate plus
+# `ops-docs family check`.
 # The git hooks call `hook-pre-commit` and `hook-pre-push` instead, which run the very
 # same commands under their own target names. Hook cost is the number this design exists
 # to measure, and it is invisible if the hooks record as `check` and `test`.

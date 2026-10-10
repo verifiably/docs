@@ -103,9 +103,9 @@ lead = ["purpose", "abstract"]
 sections = ["Install", "Usage", "Layout", "Documentation", "License"]
 ```
 
-- The summary is one sentence of 223 characters, inside the 300-character, two-sentence
-  bound, and is the overview's first paragraph condensed. It is rendered into every
-  member, so it changes only with the overview's own framing.
+- The summary is one sentence of 224 characters as the check counts it, inside the
+  300-character, two-sentence bound, and is the overview's first paragraph condensed.
+  It is rendered into every member, so it changes only with the overview's own framing.
 - Members are in stack order, bottom up, as the overview's layer table and this
   repository's README list them. `name` is each member's `identity.toml` name; `prefix`
   is its tasks prefix, which `family publish` and `family check` resolve through the

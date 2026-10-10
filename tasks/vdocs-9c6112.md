@@ -1,17 +1,19 @@
 ---
 id: vdocs-9c6112
 title: Tidy the deferred minors from the README template review
-status: doing
+status: done
 priority: 3
 size: xs
 complexity: low
 process: direct
-owner: main
+owner: chore/readme-minors
 created: 2026-10-10T11:26:12Z
-updated: 2026-10-10T13:11:44Z
+updated: 2026-10-10T13:12:29Z
 started: 2026-10-10T13:11:44Z
+completed: 2026-10-10T13:12:29Z
 depends: []
 tags: [docs]
+model: claude-opus-5-5
 agent: claude-code/claude-fable-5-1
 ---
 
@@ -20,4 +22,10 @@ Four minors deferred at the 2026-10-09 whole-branch review of the README templat
 ## Notes
 
 - 2026-10-10T13:11:44Z (main): started
+  provenance: {"harness_session":"claude-code:18a9dca7-1937-4f13-8c34-b306392701a9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-10T13:11:56Z (chore/readme-minors): resumed
+  provenance: {"harness_session":"claude-code:18a9dca7-1937-4f13-8c34-b306392701a9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-10T13:12:29Z (chore/readme-minors): done
+  provenance: {"harness_session":"claude-code:18a9dca7-1937-4f13-8c34-b306392701a9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-10T13:12:29Z (chore/readme-minors): Fixed the four deferred minors: justfile header names pre-push's family check; spec gives the summary as 224 characters as the check counts it; plan step 5 deletes the blank line after the guidance comment; check_links docstring says templates dirs are skipped at any depth
   provenance: {"harness_session":"claude-code:18a9dca7-1937-4f13-8c34-b306392701a9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}

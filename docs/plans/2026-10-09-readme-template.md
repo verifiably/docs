@@ -479,8 +479,8 @@ this order:
 4. Write `identity.toml` (given per rollout).
 5. Lay the template over the README: keep the existing file for its content, but its
    head becomes the template's head. Concretely, write the new README from the
-   template, delete the guidance comment, and fill the sections from the old README as
-   each rollout says.
+   template, delete the guidance comment with the blank line after it, and fill the
+   sections from the old README as each rollout says.
 6. Write `AGENTS.md` as each rollout says.
 7. Render: `python3 tools/ops-docs write --init` (both regions in both files), then
    `python3 tools/ops-docs check; echo exit=$?` expecting `exit=0`.

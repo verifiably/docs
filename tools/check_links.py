@@ -6,8 +6,8 @@ heading there. A link of the form `https://github.com/verifiably/<repo>/blob/mai
 (or `/tree/main/`) is checked the same way against the sibling checkout `../<repo>`,
 because this repository exists to point into the others and those pointers are what rot.
 A sibling that is not checked out on this machine is reported and skipped, never passed.
-Files under `templates/` are skipped: a template's relative links resolve in the
-repository that copies it, not here.
+Files under any directory named `templates` are skipped, at any depth, like `tasks`: a
+template's relative links resolve in the repository that copies it, not here.
 
 Exit status: 0 when every checked link resolves, 1 otherwise.
 """
