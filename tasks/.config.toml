@@ -1,1 +1,4 @@
 prefix = "vdocs"
+
+[git]
+commit = true
