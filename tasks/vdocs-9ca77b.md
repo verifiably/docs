@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-14T15:10:17Z
-updated: 2026-10-14T15:41:14Z
+updated: 2026-10-14T19:14:36Z
 started: 2026-10-14T15:40:43Z
 depends: []
 parent: vdocs-d2d5ed
@@ -29,4 +29,6 @@ Ideas it wakes: On completion, run `tasks note vdocs-c96d1b --no-reviewed "<find
   provenance: {"harness_session":"claude-code:a1b536c8-7e64-40a9-97ca-bb33b760dfc6","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-14T15:40:43Z (main): tour repository: beliefs (user's choice); verifiably only, no shared tooling
 - 2026-10-14T15:41:14Z (main): parked (waiting on user): user answers tour check 1 (explain-back: why verification is not evidence; effect of a new paper on the PHF19 belief) and rates it; then agent gives feedback and runs stop 2 (layers, ownership check), stops 3-5, and records the findings in the brief in a .worktrees/ worktree
+  provenance: {"harness_session":"claude-code:a1b536c8-7e64-40a9-97ca-bb33b760dfc6","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-14T19:14:36Z (main): resumed
   provenance: {"harness_session":"claude-code:a1b536c8-7e64-40a9-97ca-bb33b760dfc6","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
