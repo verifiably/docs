@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-14T15:10:17Z
-updated: 2026-10-14T15:40:43Z
+updated: 2026-10-14T15:40:44Z
 started: 2026-10-14T15:40:43Z
 depends: []
 parent: vdocs-d2d5ed
@@ -27,3 +27,4 @@ Ideas it wakes: On completion, run `tasks note vdocs-c96d1b --no-reviewed "<find
 
 - 2026-10-14T15:40:43Z (main): started
   provenance: {"harness_session":"claude-code:a1b536c8-7e64-40a9-97ca-bb33b760dfc6","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-14T15:40:43Z (main): tour repository: beliefs (user's choice); verifiably only, no shared tooling
