@@ -64,10 +64,13 @@ what we believe.
 - **Literature as a source of truth.** A paper's statement is recorded as a
   *source assertion*: useful for deciding what to look at, never evidence by
   itself, because nothing in it can be re-run.
-- **Subjective categories and labels.** Genes, diseases, and cell lines are
-  named by the identifiers of established ontologies, not by names someone
-  chose. Human-readable labels are computed for display and never stored or used
-  to identify anything. A term enters the shared vocabulary only when separately
+- **Ad hoc categories and labels.** Genes, diseases, and cell lines are named
+  by the identifiers of established ontologies rather than by names chosen for
+  one analysis. Those identifiers are choices too: people and algorithms drew
+  the categories and named them, and ontologies are revised, split, and merged.
+  An ontology is a shared, citable reference, not ground truth. Human-readable
+  labels are computed for display and never stored or used to identify
+  anything. A term enters the shared vocabulary only when separately
   built collections agree on it and some rule actually uses it. When two records
   might name the same thing, that is recorded as an attributed, graded claim,
   never an automatic merge.
@@ -85,13 +88,14 @@ is a real run — the mm30 reproduction, repeated after each major change
 ([record §3 and §10](https://github.com/verifiably/beliefs/blob/main/docs/designs/2026-09-05-mm30-reproduction.md#3-the-path)).
 Terms in **bold** are the record types the rest of the guide explains.
 
-1. **Write the question down precisely.** "Does disease stage raise PHF19
-   expression in multiple myeloma?" is recorded as a **proposition** with
-   explicit parts rather than as a sentence: the relationship (*affects*; the
-   guide calls this the *operator*), the two things it relates (disease stage,
-   and the protein PHF19), the direction asserted (*raises* rather than
-   *lowers*; the *polarity*), and what kind of claim it is (a cause-and-effect
-   claim rather than, say, a mere association; the *claim layer*). Because those
+1. **Write the question down precisely.** "Does disease stage progression
+   increase PHF19 gene expression in multiple myeloma?" is recorded as a
+   **proposition** with explicit parts rather than as a sentence: the
+   relationship (*affects*; the guide calls this the *operator*), the two things
+   it relates (disease stage, and the protein PHF19), the direction asserted
+   (*increases* rather than *decreases*; the *polarity*), and what kind of claim
+   it is (a cause-and-effect claim rather than, say, a mere association; the
+   *claim layer*). Because those
    parts are the claim's identity, rewording the sentence changes nothing.
 2. **Get the data in hand.** The expression matrix (GEO series GSE179929,
    6,154,181 bytes) is copied from a local file into a store and fingerprinted
