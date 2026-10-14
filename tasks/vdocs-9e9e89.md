@@ -7,7 +7,7 @@ size: s
 complexity: low
 process: direct
 created: 2026-10-02T19:25:51Z
-updated: 2026-10-14T15:24:09Z
+updated: 2026-10-14T15:24:10Z
 depends: []
 tags: [quick-add]
 source: "mindful:thought:57edd707394a7744bf8fa876f929dfb7"
@@ -27,3 +27,7 @@ Established (scope 2026-10-14, against overview.md at 0a9571b and beliefs docs/d
 
 Done: both passages reworded in overview.md as above; `just check` passes.
 Where: overview.md "What is kept out" and "One building block, start to finish" step 1; the mm30 record linked from that section.
+
+## Notes
+
+- 2026-10-14T15:24:09Z (main): scope: rescoped; premises checked against overview.md at 0a9571b and beliefs mm30 record §2 (proposition causal_effect, positive); body now records that the reworded question must stay causal, so the 'associated with' candidate is ruled out; process direct, size s, complexity low
