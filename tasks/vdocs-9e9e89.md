@@ -1,15 +1,16 @@
 ---
 id: vdocs-9e9e89
 title: "overview.md: reword the PHF19 example question and qualify the claim that ontology identifiers are not subjective"
-status: doing
+status: done
 priority: 2
 size: s
 complexity: low
 process: direct
 owner: docs/overview-wording
 created: 2026-10-02T19:25:51Z
-updated: 2026-10-14T15:27:31Z
+updated: 2026-10-14T15:28:24Z
 started: 2026-10-14T15:27:15Z
+completed: 2026-10-14T15:28:24Z
 depends: []
 tags: [quick-add]
 source: "mindful:thought:57edd707394a7744bf8fa876f929dfb7"
@@ -36,4 +37,8 @@ Where: overview.md "What is kept out" and "One building block, start to finish" 
 - 2026-10-14T15:27:15Z (main): started
   provenance: {"harness_session":"claude-code:ddeb3fbd-c768-463c-92d7-8e94c48b3607","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-14T15:27:31Z (docs/overview-wording): resumed
+  provenance: {"harness_session":"claude-code:ddeb3fbd-c768-463c-92d7-8e94c48b3607","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-14T15:28:24Z (docs/overview-wording): done
+  provenance: {"harness_session":"claude-code:ddeb3fbd-c768-463c-92d7-8e94c48b3607","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-14T15:28:24Z (docs/overview-wording): overview.md: PHF19 question now 'Does disease stage progression increase PHF19 gene expression in multiple myeloma?' (kept causal to match the claim layer), polarity gloss increases/decreases; 'Subjective categories' bullet renamed 'Ad hoc categories' and states ontology identifiers are human/algorithmic choices that get revised — a shared, citable reference, not ground truth. just check passes.
   provenance: {"harness_session":"claude-code:ddeb3fbd-c768-463c-92d7-8e94c48b3607","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
