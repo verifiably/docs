@@ -1,13 +1,15 @@
 ---
 id: vdocs-9e9e89
 title: "overview.md: reword the PHF19 example question and qualify the claim that ontology identifiers are not subjective"
-status: todo
+status: doing
 priority: 2
 size: s
 complexity: low
 process: direct
+owner: main
 created: 2026-10-02T19:25:51Z
-updated: 2026-10-14T15:24:10Z
+updated: 2026-10-14T15:27:15Z
+started: 2026-10-14T15:27:15Z
 depends: []
 tags: [quick-add]
 source: "mindful:thought:57edd707394a7744bf8fa876f929dfb7"
@@ -31,3 +33,5 @@ Where: overview.md "What is kept out" and "One building block, start to finish" 
 ## Notes
 
 - 2026-10-14T15:24:09Z (main): scope: rescoped; premises checked against overview.md at 0a9571b and beliefs mm30 record §2 (proposition causal_effect, positive); body now records that the reworded question must stay causal, so the 'associated with' candidate is ruled out; process direct, size s, complexity low
+- 2026-10-14T15:27:15Z (main): started
+  provenance: {"harness_session":"claude-code:ddeb3fbd-c768-463c-92d7-8e94c48b3607","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
