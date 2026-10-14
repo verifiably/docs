@@ -8,7 +8,7 @@ complexity: low
 process: direct
 owner: docs/overview-wording
 created: 2026-10-02T19:25:51Z
-updated: 2026-10-14T15:28:24Z
+updated: 2026-10-14T15:30:28Z
 started: 2026-10-14T15:27:15Z
 completed: 2026-10-14T15:28:24Z
 depends: []
@@ -42,3 +42,4 @@ Where: overview.md "What is kept out" and "One building block, start to finish" 
   provenance: {"harness_session":"claude-code:ddeb3fbd-c768-463c-92d7-8e94c48b3607","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-14T15:28:24Z (docs/overview-wording): overview.md: PHF19 question now 'Does disease stage progression increase PHF19 gene expression in multiple myeloma?' (kept causal to match the claim layer), polarity gloss increases/decreases; 'Subjective categories' bullet renamed 'Ad hoc categories' and states ontology identifiers are human/algorithmic choices that get revised — a shared, citable reference, not ground truth. just check passes.
   provenance: {"harness_session":"claude-code:ddeb3fbd-c768-463c-92d7-8e94c48b3607","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-14T15:30:28Z (main): follow-up: protein:PHF19 referent vs RNA gene-expression evidence filed as beliefs-bbd142; overview step 1 still says 'the protein PHF19' pending its decision
