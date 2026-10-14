@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-14T15:10:17Z
-updated: 2026-10-14T19:14:36Z
+updated: 2026-10-14T19:14:37Z
 started: 2026-10-14T15:40:43Z
 depends: []
 parent: vdocs-d2d5ed
@@ -32,3 +32,4 @@ Ideas it wakes: On completion, run `tasks note vdocs-c96d1b --no-reviewed "<find
   provenance: {"harness_session":"claude-code:a1b536c8-7e64-40a9-97ca-bb33b760dfc6","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-14T19:14:36Z (main): resumed
   provenance: {"harness_session":"claude-code:a1b536c8-7e64-40a9-97ca-bb33b760dfc6","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-14T19:14:37Z (main): check 1 (ecosystem, explain-back): user rated helped; answers right in substance, missed that verification is a gate on the assessment rather than independence, and that a paper can still steer what is analysed
