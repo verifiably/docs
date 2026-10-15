@@ -1,4 +1,5 @@
 prefix = "vdocs"
+color = "#fd538f"
 
 [git]
 commit = true
