@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-14T15:10:17Z
-updated: 2026-10-14T19:16:09Z
+updated: 2026-10-22T22:31:26Z
 started: 2026-10-14T15:40:43Z
 depends: []
 parent: vdocs-d2d5ed
@@ -36,3 +36,5 @@ Ideas it wakes: On completion, run `tasks note vdocs-c96d1b --no-reviewed "<find
 - 2026-10-14T19:16:08Z (main): finding: preparing stop 2 surfaced overview drift — layer-state column (2026-09-26) says autonomy 'Designed, not started'; autonomy README says the envelope's first half is built
 - 2026-10-14T19:16:08Z (main): parked (waiting on user): user answers tour check 2 (layer ownership A-F) and rates it; then agent gives feedback and runs stops 3-5, then records findings in the brief in a .worktrees/ worktree
   provenance: {"harness_session":"claude-code:a1b536c8-7e64-40a9-97ca-bb33b760dfc6","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-22T22:31:26Z (main): resumed
+  provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
