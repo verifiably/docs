@@ -7,7 +7,7 @@ size: m
 complexity: mid
 process: direct
 created: 2026-10-10T11:26:12Z
-updated: 2026-10-14T15:10:46Z
+updated: 2026-10-23T18:01:39Z
 depends: []
 tags: [docs, cross-project]
 agent: claude-code/claude-fable-5-1
@@ -24,3 +24,4 @@ Where to look: ops-docs `check` and `write` (the `subsystem=True` paths in marke
 ## Notes
 
 - 2026-10-14T15:10:46Z (main): scope: scoped; rollouts it waited on landed (vdocs-0f0163 done 2026-10-10); ops-docs subsystem support confirmed in the vendored tools; premise corrected: atoms has python/ only, no ts/; set todo, m/mid/direct
+- 2026-10-23T18:01:39Z (main): 2026-10-23: drift confirmed in beliefs' undeclared subsystem READMEs (python/README.md headed 'science — Python' with one module of about 60 listed; ts/README.md 'Python-primary'); content correction filed as beliefs-e3ca2a, to be done in this task's rewrite pass if it starts first. Declaring subsystems widens mechanical coverage only; prose review is ops-b7e4a2.
