@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-14T15:10:17Z
-updated: 2026-10-23T16:54:10Z
+updated: 2026-10-23T16:54:11Z
 started: 2026-10-14T15:40:43Z
 depends: []
 parent: vdocs-d2d5ed
@@ -43,3 +43,4 @@ Ideas it wakes: On completion, run `tasks note vdocs-c96d1b --no-reviewed "<find
   provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-23T16:54:10Z (main): resumed
   provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-23T16:54:10Z (main): check 2 (layer ownership A-F, choose-between): user rated a little helpful; 5/6 right, D (verification refusing belief) answered atoms, owner is beliefs; user: shuffle the items rather than presenting them in stack order, which gives the answers away
