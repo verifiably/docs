@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-14T15:10:17Z
-updated: 2026-10-23T16:54:40Z
+updated: 2026-10-23T16:54:41Z
 started: 2026-10-14T15:40:43Z
 depends: []
 parent: vdocs-d2d5ed
@@ -45,3 +45,5 @@ Ideas it wakes: On completion, run `tasks note vdocs-c96d1b --no-reviewed "<find
   provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-23T16:54:10Z (main): check 2 (layer ownership A-F, choose-between): user rated a little helpful; 5/6 right, D (verification refusing belief) answered atoms, owner is beliefs; user: shuffle the items rather than presenting them in stack order, which gives the answers away
 - 2026-10-23T16:54:40Z (main): finding: beliefs docs/guide/README.md (updated 2026-09-26) also says 'The autonomy layer is not started'; same drift as the overview, in a member guide
+- 2026-10-23T16:54:41Z (main): parked (waiting on user, review): user answers stop 3 check (predict P1-P4 on beliefs: claim identity, independence count, retraction, no evidence) and rates it; then agent gives feedback, runs stops 4 (subsystems) and 5 (authority design and code), and records findings in the brief in a .worktrees/ worktree
+  provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
