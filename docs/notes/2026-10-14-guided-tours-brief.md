@@ -64,11 +64,12 @@ until it has proved useful.
 ## 5. Unanswered questions
 
 - Which scales and which repositories come first, and whether "codebases and systems"
-  reaches past verifiably into the shared tooling (ops, tasks, lore)? **The user.**
+  reaches past verifiably into the shared tooling (ops, tasks, lore)? **Answered for the
+  pilot:** beliefs, verifiably only. Later tours are open.
 - What kind of check helps: quiz questions, explaining it back, predicting behaviour, or
-  choosing between options? **The pilot** (vdocs-9ca77b).
+  choosing between options? **Answered by the pilot**; see §7.
 - Where the distillation lands: a mindful thought, a note here, or a task? **The user,
-  after the pilot.**
+  after the pilot**; still open, so the pilot's distillation is §7 here.
 - Whether the tour's checks share a mechanism with autonomy's pausing to check
   understanding, from the same thought? **The user**; it would be filed in autonomy if
   it is pursued.
@@ -78,3 +79,61 @@ until it has proved useful.
 - **vdocs-9ca77b** (under goal vdocs-d2d5ed): pilot one live tour (alternative A) over one repository and
   record what worked. vdocs-c96d1b waits on it.
 - vdocs-946c49, already scoped, adds the subsystem scale. The pilot does not need it.
+
+## 7. Pilot result (vdocs-9ca77b, 2026-10-14 to 2026-10-23)
+
+One live tour of beliefs (alternative A), five stops down the ladder in §2, one check
+per stop. Ratings are the user's; scores are against the sources the tour quoted.
+
+| Stop | Check kind | Score | Rating |
+|---|---|---|---|
+| 1. Ecosystem | explain it back | right in substance, two refinements | helped |
+| 2. Layers | choose the owning repository (A–F) | 5 of 6 | a little helpful |
+| 3. Repository | predict what happens (P1–P4) | 2 right, 2 half right | useful |
+| 4. Subsystems | which tree a change lands in (W–Z) | 3 of 4 | useful |
+| 5. Design and code | mixed quiz over all stops (Q1–Q4) | 1 right, 1 half, 2 wrong | not rated |
+
+**Which checks helped.** Prediction and placement checks rated highest. They make the
+learner run the model rather than recall it, and their misses were informative. The
+ownership check gave its answers away by listing the items in stack order. The closing
+mixed quiz was the only check that exposed a lasting misconception: certification
+states (`independent`, `not-certified`) were read as belief results, and "no evidence"
+was still answered as zero after stop 3 had corrected it. A late mixed check is worth
+keeping for that reason.
+
+**What the learner brought.** Unprompted side questions ("what is the shared
+encoding?", "what is an assessment, and does it relate to association?", "does effect
+size count?") were as valuable as the checks: each sent the tour into the authority
+documents, and one exposed a term the repository names but never defines. A domain
+correction came the other way: mm30 is a meta-analysis over many datasets, not one
+dataset, so it was a poor example for independence.
+
+**Rules for the next tour.**
+
+- Shuffle check items; never list them in the order the material was presented.
+- Keep one kind of question per check. A "what happens" item inside a "where does it
+  land" list was answered as a placement.
+- Ground every check answer in a quoted source line, and check each example against
+  the domain before using it.
+- End with a mixed check across all stops.
+- Leave room for the learner's side questions, and answer them from the authority
+  documents rather than from memory.
+
+**Tours also audit the docs.** Preparing the stops found stale state claims in three
+places, none caught by any check: this repository's overview (autonomy "Designed, not
+started"; vdocs-aabed7), beliefs' contributor guide (the same claim; beliefs-4dfe18)
+and beliefs' subsystem READMEs (beliefs-e3ca2a, filed independently the same day). The
+encoding term with no glossary entry is in beliefs-4dfe18.
+
+**Did it meet the question?** Partly. After the tour, the learner could name which
+repository owns a behaviour (5 of 6, then right again in the quiz) and predict the
+kernel's main rules for identity and independence. The exact shape of a belief result
+was still shaky at the end.
+
+**Recommendation: a skill, not written tours.** The method is portable and the
+content is not: every stop was built from the identity files and authority documents
+at the time of the tour, which is what found the drift. Written tours (alternative B)
+would have restated the stale claims. The skill should carry the ladder in §2, the
+check kinds above, the rules for the next tour, and a step that files each drift
+finding as a task in the project that owns it. Pilot it on a second repository before
+writing it, to see whether the rules generalise beyond beliefs.
