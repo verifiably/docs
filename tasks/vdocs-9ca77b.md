@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-14T15:10:17Z
-updated: 2026-10-23T17:03:09Z
+updated: 2026-10-23T17:03:28Z
 started: 2026-10-14T15:40:43Z
 depends: []
 parent: vdocs-d2d5ed
@@ -49,3 +49,4 @@ Ideas it wakes: On completion, run `tasks note vdocs-c96d1b --no-reviewed "<find
   provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-23T17:03:09Z (main): resumed
   provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-23T17:03:28Z (main): check 3 (repository, predict P1-P4): user rated useful; P1, P2 right; P3 belief right but said the record is updated (it is a separate retraction record; records are immutable); P4 said 0 (it is 'no evidence', never zero), reason right. User: mm30 is a meta-analysis aggregating many datasets, a poor example for single-dataset independence; the kernel handles it through pairwise dataset-lineage closures
