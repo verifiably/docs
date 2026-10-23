@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-14T15:10:17Z
-updated: 2026-10-23T18:01:52Z
+updated: 2026-10-23T18:50:55Z
 started: 2026-10-14T15:40:43Z
 depends: []
 parent: vdocs-d2d5ed
@@ -57,4 +57,6 @@ Ideas it wakes: On completion, run `tasks note vdocs-c96d1b --no-reviewed "<find
   provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-23T18:01:51Z (main): check 4 (subsystem, where-does-it-land W-Z): user rated useful; 3/4; Y (TS handed a retiring contract) answered both+fixtures, answer is refused; finding: Y was a predict item inside a placement list, so keep one item type per check. User asked what 'shared/canonical value encoding' means: the README names it without defining it, a gap a tour surfaces
 - 2026-10-23T18:01:52Z (main): parked (waiting on user, review): user answers stop 5 quiz (Q1-Q4) and rates it; then agent gives feedback and records findings in the brief (sections 5 and 6) in a .worktrees/ worktree, notes vdocs-c96d1b, and closes the pilot
+  provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-23T18:50:55Z (main): resumed
   provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
