@@ -1,0 +1,16 @@
+---
+id: vdocs-aabed7
+title: "overview.md layer-state column: autonomy row says 'Designed, not started' but autonomy reports built parts"
+status: todo
+priority: 2
+size: xs
+complexity: low
+process: direct
+created: 2026-10-23T18:52:18Z
+updated: 2026-10-23T18:52:18Z
+depends: []
+tags: [docs]
+agent: claude-code/claude-opus-5-5
+---
+
+Found 2026-10-14 and rechecked 2026-10-23 during the guided-tour pilot (vdocs-9ca77b). overview.md's layer-state table (snapshot dated 2026-09-26) says autonomy is 'Designed, not started'. autonomy's README now says: 'Built: tiers, the closing check, the sandbox, and autonomy run's launch side.' Do: re-read each layer's own state authority (README / adoption ledger) and update the column and its date in one pass, per this repository's rule that the column is a dated snapshot. Check every row, not only autonomy.
