@@ -6,9 +6,9 @@ priority: 2
 size: s
 complexity: mid
 process: direct
-owner: main
+owner: docs/tour-pilot-findings
 created: 2026-10-14T15:10:17Z
-updated: 2026-10-23T18:51:27Z
+updated: 2026-10-23T18:51:34Z
 started: 2026-10-14T15:40:43Z
 depends: []
 parent: vdocs-d2d5ed
@@ -61,3 +61,5 @@ Ideas it wakes: On completion, run `tasks note vdocs-c96d1b --no-reviewed "<find
 - 2026-10-23T18:50:55Z (main): resumed
   provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-23T18:51:27Z (main): check 5 (quiz, mixed stops, shuffled): Q1 half (version change right; missed that the TS parity suite against fixtures fails), Q2 wrong (answered NoBelief('not-certified'); not-certified is an edge, so belief 1), Q3 right, Q4 wrong (answered NoBelief('independent'); it is Belief value 0) though the contrast with P4 was right. Rating not given. Finding: the quiz exposed a misconception the earlier checks did not: certification states read as belief results
+- 2026-10-23T18:51:34Z (docs/tour-pilot-findings): resumed
+  provenance: {"harness_session":"claude-code:1c0c67d0-b42a-41c8-b844-5ee4b3df93e9","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
