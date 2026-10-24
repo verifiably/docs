@@ -1,15 +1,17 @@
 ---
 id: vdocs-b7e1b5
 title: "overview.md: open with the status quo a newcomer knows (an ad hoc analysis project) before the verifiably ideas"
-status: doing
+status: done
 priority: 2
 size: s
 complexity: mid
 process: direct
-owner: main
+owner: docs/b7e1b5-overview-status-quo
 created: 2026-10-24T18:28:28Z
-updated: 2026-10-24T18:56:09Z
+updated: 2026-10-24T19:04:00Z
 started: 2026-10-24T18:56:09Z
+completed: 2026-10-24T19:03:59Z
+closed: 2026-10-24T19:03:59Z
 depends: []
 tags: [docs]
 source: vdocs-e4318e
@@ -21,4 +23,14 @@ Follow-on to the second guided tour's finding (vdocs-e4318e) and the user's 2026
 ## Notes
 
 - 2026-10-24T18:56:09Z (main): started
+  provenance: {"harness_session":"claude-code:0e2eed92-cf40-40a1-aac6-b06ac9f3c1ce","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-24T18:56:28Z (docs/b7e1b5-overview-status-quo): resumed
+  provenance: {"harness_session":"claude-code:0e2eed92-cf40-40a1-aac6-b06ac9f3c1ce","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-24T18:57:25Z (docs/b7e1b5-overview-status-quo): baseline 2026-10-24 (just test = link checker, worktree .worktrees/b7e1b5-overview-status-quo at 97ffd71): passed; sibling links skipped in the worktree (no ../<repo> there), to be verified from the main checkout after merge
+- 2026-10-24T19:01:21Z (docs/b7e1b5-overview-status-quo): review: impl round 1 — verdict: revise; findings: Important 4, Minor 3; reviewer: claude-code/claude-fable-5-1
+- 2026-10-24T19:03:58Z (docs/b7e1b5-overview-status-quo): review: impl round 2 — verdict: accept; findings: Minor 1; reviewer: claude-code/claude-fable-5-1
+- 2026-10-24T19:03:58Z (docs/b7e1b5-overview-status-quo): minor (deferred): the atoms clause answers two of question 6's three parts; it could add 'and the disk alone says which changes were its own', which atoms' README claims
+- 2026-10-24T19:03:59Z (docs/b7e1b5-overview-status-quo): done
+  provenance: {"harness_session":"claude-code:0e2eed92-cf40-40a1-aac6-b06ac9f3c1ce","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-24T19:03:59Z (docs/b7e1b5-overview-status-quo): overview.md gains 'Where it starts from' after 'In brief': the ad hoc project directory, the seven questions it cannot answer, and which layer answers each, before the ideas are built up; two review rounds (revise, accept)
   provenance: {"harness_session":"claude-code:0e2eed92-cf40-40a1-aac6-b06ac9f3c1ce","harness_session_source":"CLAUDE_CODE_SESSION_ID"}

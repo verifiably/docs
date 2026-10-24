@@ -25,6 +25,50 @@ never because a paper, a person, or an AI said so.
 - **People and agents work on the same ground.** The same records, commands,
   and rules serve a researcher at a terminal and an agent running unattended.
 
+## Where it starts from
+
+Most computational research, in bioinformatics as elsewhere, lives in a project
+directory: the scripts and notebooks, the data files they read, and the tables
+and figures they write. It works, and it is where the trouble starts. Questions
+that such a project cannot answer, once it is more than a few weeks old:
+
+- **Which exact data and code produced this number?** The figure came from a
+  table, the table from a script, the script from a file someone cleaned by hand
+  two years ago. The chain exists in a person's memory, if at all.
+- **Would it come out the same if run again?** The environment has moved on, a
+  dependency changed its defaults, a path points at a file that has since been
+  replaced. "It ran" is not "it reproduces".
+- **Does this claim rest on data, or on a paper?** A statement copied from a
+  review sits in the notes with the same weight as a result measured here, and
+  nothing marks the difference.
+- **How many independent pieces of evidence are there, really?** Three scripts
+  over one cohort agree with one another; that is one observation, not three.
+- **What did we believe before, and why did it change?** A result that looked
+  wrong was fixed by editing the file. The earlier version, and the reason for
+  the change, are gone.
+- **What happened when the run died?** A job killed half-way, or a sync client
+  writing while a script wrote, leaves a directory in which nobody can say which
+  files are finished, which are half-written, and which are someone else's.
+- **Could an agent do this unattended, and would we trust what it wrote?** The
+  same questions, asked about a program nobody watched.
+
+verifiably answers those questions layer by layer, from the disk up. `atoms`
+answers the one about the dead run: a change to many files is finished, undone,
+or halted with its evidence preserved, never silently half-done. `nodes` stores
+records and the relations between them in one on-disk format, with no scientific
+meaning of its own. `beliefs` holds the scientific rules that answer the first
+five: which data and code each result rests on, whether a run came out the same
+again, that only a checked analysis of data in hand counts and a paper's
+statement never does, how many results are independent of one another, and that
+history is only ever added to, so an earlier version and the reason it changed
+are never lost. `science` is the set of commands a person or a coding agent runs
+to do that work, every write a record the kernel checks and every read naming
+the records it used. `autonomy` says what may run unattended and under what
+limits, and runs it through the same commands, so what an agent writes is
+checked exactly as a person's work is. The rest of this overview builds those
+answers up from the goal; [the layers of the stack](#the-layers-of-the-stack)
+names the five repositories and the state of each.
+
 ## What it is for
 
 The building blocks are useful in four ways:
