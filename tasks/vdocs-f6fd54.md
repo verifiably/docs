@@ -6,9 +6,9 @@ priority: 2
 size: s
 complexity: mid
 process: direct
-owner: main
+owner: fix/vdocs-f6fd54
 created: 2026-10-22T19:08:12Z
-updated: 2026-10-24T15:48:20Z
+updated: 2026-10-24T15:48:30Z
 started: 2026-10-24T15:48:20Z
 depends: []
 tags: []
@@ -30,4 +30,6 @@ Reported files:
 ## Notes
 
 - 2026-10-24T15:48:20Z (main): started
+  provenance: {"harness_session":"codex:01a16e98-902b-7952-bfd9-3c4944ca26d7","harness_session_source":"CODEX_THREAD_ID"}
+- 2026-10-24T15:48:30Z (fix/vdocs-f6fd54): resumed
   provenance: {"harness_session":"codex:01a16e98-902b-7952-bfd9-3c4944ca26d7","harness_session_source":"CODEX_THREAD_ID"}
