@@ -52,18 +52,22 @@ that such a project cannot answer, once it is more than a few weeks old:
 - **Could an agent do this unattended, and would we trust what it wrote?** The
   same questions, asked about a program nobody watched.
 
-verifiably answers those questions layer by layer, from the disk up
-([the layers of the stack](#the-layers-of-the-stack) lists all five with their
-state). `atoms` answers the one about the dead run: a change to many files is finished,
-undone, or halted with its evidence preserved, never silently half-done.
-`nodes` stores records and the relations between them in one on-disk format,
-with no scientific meaning of its own. `beliefs` holds the scientific rules:
-which data are in hand, which run reproduced, which assessment may count, how
-many are independent, what a claim's belief is, and that history is only ever
-added to. `science` is the set of commands a person or a coding agent runs to
-do that work, each step leaving a record. `autonomy` says what may run
-unattended, and under what limits. The rest of this overview builds the ideas
-up from the goal, and ends with the layers.
+verifiably answers those questions layer by layer, from the disk up. `atoms`
+answers the one about the dead run: a change to many files is finished, undone,
+or halted with its evidence preserved, never silently half-done. `nodes` stores
+records and the relations between them in one on-disk format, with no scientific
+meaning of its own. `beliefs` holds the scientific rules that answer the first
+five: which data and code each result rests on, whether a run came out the same
+again, that only a checked analysis of data in hand counts and a paper's
+statement never does, how many results are independent of one another, and that
+history is only ever added to, so an earlier version and the reason it changed
+are never lost. `science` is the set of commands a person or a coding agent runs
+to do that work, every write a record the kernel checks and every read naming
+the records it used. `autonomy` says what may run unattended and under what
+limits, and runs it through the same commands, so what an agent writes is
+checked exactly as a person's work is. The rest of this overview builds those
+answers up from the goal; [the layers of the stack](#the-layers-of-the-stack)
+names the five repositories and the state of each.
 
 ## What it is for
 
