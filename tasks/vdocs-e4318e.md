@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-24T00:43:13Z
-updated: 2026-10-24T16:09:04Z
+updated: 2026-10-24T16:14:05Z
 started: 2026-10-24T16:09:04Z
 depends: []
 parent: vdocs-d2d5ed
@@ -30,3 +30,4 @@ Ideas it wakes: On completion, run `tasks -C <root> note vdocs-c96d1b --no-revie
 
 - 2026-10-24T16:09:04Z (main): started
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-24T16:14:05Z (main): repository chosen by the user: atoms (most distant domain from beliefs; tests portability of the §7 rules)
