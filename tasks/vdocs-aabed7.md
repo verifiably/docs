@@ -1,15 +1,17 @@
 ---
 id: vdocs-aabed7
 title: "overview.md layer-state column: autonomy row says 'Designed, not started' but autonomy reports built parts"
-status: doing
+status: done
 priority: 2
 size: xs
 complexity: low
 process: direct
 owner: docs/vdocs-aabed7-layer-states
 created: 2026-10-23T18:52:18Z
-updated: 2026-10-24T15:19:04Z
+updated: 2026-10-24T15:19:06Z
 started: 2026-10-24T15:13:50Z
+completed: 2026-10-24T15:19:06Z
+closed: 2026-10-24T15:19:06Z
 depends: []
 tags: [docs]
 agent: claude-code/claude-opus-5-5
@@ -29,3 +31,7 @@ Found 2026-10-14 and rechecked 2026-10-23 during the guided-tour pilot (vdocs-9c
 - 2026-10-24T15:18:35Z (docs/vdocs-aabed7-layer-states): attached: layer-states-review-report.md (2439 bytes): Full read-only review of c292131 by codex/gpt-6.1-sol; accepted with no findings
 - 2026-10-24T15:19:03Z (docs/vdocs-aabed7-layer-states): Ruling: Accept the reviewer’s scope exclusion of runtime correctness, crash recertification and complete cross-installation execution for revision c292131. Why: this task refreshes a dated ecosystem snapshot against named layer-owned authorities and changes no implementation. Cost: underlying runtime defects are not ruled out by this documentation review. Live GitHub deployment was also not checked; all linked files and anchors were checked locally. Final verification: just test with the actual sibling directory checked 38 link targets without errors/skips; just check, tasks check and git diff --check passed. Full reviewer report attached; its ignored temporary copy matched the attachment and was removed.
 - 2026-10-24T15:19:04Z (docs/vdocs-aabed7-layer-states): retained: {"host":"titan","kind":"worktree","path":".worktrees/vdocs-aabed7","state":"kept","verification":"verified","purpose":"Immediate local integration and checked removal of the reviewed documentation branch; no separate scratch or off-tree evidence remains","next_owner":"session:codex:01a16e79-06c8-76b0-9c72-6a9214c2650a","cleanup_trigger":"After local merge and passing merged-tree checks, inspect ignored files and host pointers, harvest timings, then remove the worktree"}
+- 2026-10-24T15:19:06Z (docs/vdocs-aabed7-layer-states): done
+  provenance: {"harness_session":"codex:01a16e79-06c8-76b0-9c72-6a9214c2650a","harness_session_source":"CODEX_THREAD_ID"}
+- 2026-10-24T15:19:06Z (docs/vdocs-aabed7-layer-states): Refreshed all five layer states and snapshot date to 2026-10-24 with named authorities; independent review accepted with no findings; 38 link targets and repository checks passed.
+  provenance: {"harness_session":"codex:01a16e79-06c8-76b0-9c72-6a9214c2650a","harness_session_source":"CODEX_THREAD_ID"}
