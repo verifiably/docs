@@ -8,7 +8,7 @@ complexity: low
 process: direct
 owner: docs/vdocs-aabed7-layer-states
 created: 2026-10-23T18:52:18Z
-updated: 2026-10-24T15:18:35Z
+updated: 2026-10-24T15:19:03Z
 started: 2026-10-24T15:13:50Z
 depends: []
 tags: [docs]
@@ -27,3 +27,4 @@ Found 2026-10-14 and rechecked 2026-10-23 during the guided-tour pilot (vdocs-9c
 - 2026-10-24T15:16:06Z (docs/vdocs-aabed7-layer-states): Correction to preceding baseline note: the observed count was 35 link targets checked, not 57. The full-suite recipe exited 0 with no sibling skips or errors.
 - 2026-10-24T15:18:32Z (docs/vdocs-aabed7-layer-states): review: impl round 1 — verdict: accept; findings: none; reviewer: codex/gpt-6.1-sol
 - 2026-10-24T15:18:35Z (docs/vdocs-aabed7-layer-states): attached: layer-states-review-report.md (2439 bytes): Full read-only review of c292131 by codex/gpt-6.1-sol; accepted with no findings
+- 2026-10-24T15:19:03Z (docs/vdocs-aabed7-layer-states): Ruling: Accept the reviewer’s scope exclusion of runtime correctness, crash recertification and complete cross-installation execution for revision c292131. Why: this task refreshes a dated ecosystem snapshot against named layer-owned authorities and changes no implementation. Cost: underlying runtime defects are not ruled out by this documentation review. Live GitHub deployment was also not checked; all linked files and anchors were checked locally. Final verification: just test with the actual sibling directory checked 38 link targets without errors/skips; just check, tasks check and git diff --check passed. Full reviewer report attached; its ignored temporary copy matched the attachment and was removed.
