@@ -8,7 +8,7 @@ complexity: low
 process: direct
 owner: docs/vdocs-aabed7-layer-states
 created: 2026-10-23T18:52:18Z
-updated: 2026-10-24T15:19:06Z
+updated: 2026-10-24T15:19:29Z
 started: 2026-10-24T15:13:50Z
 completed: 2026-10-24T15:19:06Z
 closed: 2026-10-24T15:19:06Z
@@ -35,3 +35,4 @@ Found 2026-10-14 and rechecked 2026-10-23 during the guided-tour pilot (vdocs-9c
   provenance: {"harness_session":"codex:01a16e79-06c8-76b0-9c72-6a9214c2650a","harness_session_source":"CODEX_THREAD_ID"}
 - 2026-10-24T15:19:06Z (docs/vdocs-aabed7-layer-states): Refreshed all five layer states and snapshot date to 2026-10-24 with named authorities; independent review accepted with no findings; 38 link targets and repository checks passed.
   provenance: {"harness_session":"codex:01a16e79-06c8-76b0-9c72-6a9214c2650a","harness_session_source":"CODEX_THREAD_ID"}
+- 2026-10-24T15:19:29Z (main): retained: {"host":"titan","kind":"worktree","path":".worktrees/vdocs-aabed7","state":"released","verification":"verified","purpose":"Reviewed branch fast-forward merged locally into main at 1a6ed5d; merged just test and just check passed; no ignored or uncommitted files, no submodules or host pointers remained; tt-report ran; worktree and merged task branch removed; full review is preserved in the task attachment","next_owner":"none","cleanup_trigger":"none"}
