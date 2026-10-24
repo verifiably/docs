@@ -1,13 +1,15 @@
 ---
 id: vdocs-e4318e
 title: "Pilot a second guided tour on another repository, applying the first pilot's rules"
-status: todo
+status: doing
 priority: 2
 size: s
 complexity: mid
 process: direct
+owner: main
 created: 2026-10-24T00:43:13Z
-updated: 2026-10-24T15:41:30Z
+updated: 2026-10-24T16:09:04Z
+started: 2026-10-24T16:09:04Z
 depends: []
 parent: vdocs-d2d5ed
 tags: [docs]
@@ -23,3 +25,8 @@ Ideas it wakes: On completion, run `tasks -C <root> note vdocs-c96d1b --no-revie
 ## References
 
 - brief (input, required, kind=brief): docs/notes/2026-10-14-guided-tours-brief.md — the ladder (§2) and the first pilot result and rules (§7)
+
+## Notes
+
+- 2026-10-24T16:09:04Z (main): started
+  provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
