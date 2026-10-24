@@ -216,16 +216,20 @@ names only the daily-surface layer.
 
 | Layer | Repository | What it does | State |
 |---|---|---|---|
-| Filesystem effects | [`atoms`](https://github.com/verifiably/atoms/blob/main/README.md) | Crash-safe, atomic writes to disk, with a record made before each change | Built and certified on a pinned kernel and volume |
-| Storage | [`nodes`](https://github.com/verifiably/nodes/blob/main/README.md) | Generic storage of records and relations, with no scientific meaning | Built |
-| Epistemic kernel | [`beliefs`](https://github.com/verifiably/beliefs/blob/main/README.md) | Record kinds, identity, runs, verification, belief, the world index, correction, the log, and publication | Built through conformance cut 41; the remote half of publish is being designed as cut 42 |
-| Daily surface | [`science`](https://github.com/verifiably/science/blob/main/README.md) | The commands people and coding agents use, over the CLI and MCP | The command framework and the belief-path commands are built; the coordination commands are partly built |
-| Autonomy | [`autonomy`](https://github.com/verifiably/autonomy/blob/main/README.md) | Running the daily surface unattended, inside a fixed envelope | Designed, not started |
+| Filesystem effects | [`atoms`](https://github.com/verifiably/atoms/blob/main/README.md) | Crash-safe, atomic writes to disk, with a record made before each change | Built on Linux, with crash certification pinned to a kernel and volume configuration; the macOS backend remains unbuilt |
+| Storage | [`nodes`](https://github.com/verifiably/nodes/blob/main/README.md) | Generic storage of records and relations, with no scientific meaning | Built in Python and TypeScript over a shared on-disk format |
+| Epistemic kernel | [`beliefs`](https://github.com/verifiably/beliefs/blob/main/README.md) | Record kinds, identity, runs, verification, belief, the world index, correction, the log, and publication | Built through conformance cut 46, including local and remote publish |
+| Daily surface | [`science`](https://github.com/verifiably/science/blob/main/README.md) | The commands people and coding agents use, over the CLI and MCP | Command framework, belief-path and coordination commands built; initial sharing between installations over git built for non-overlapping records |
+| Autonomy | [`autonomy`](https://github.com/verifiably/autonomy/blob/main/README.md) | Running the daily surface unattended, inside a fixed envelope | Tiers, closing check, sandbox, launch side of `autonomy run` and model proxy built; runs close `unwired` until science's run endpoint exists |
 
-The state column is a snapshot as of 2026-09-26. Each repository is the
-authority for its own state: for the kernel, the
-[adoption ledger's current-state summary](https://github.com/verifiably/beliefs/blob/main/docs/designs/2026-08-03-redesign-adoption-ledger.md#current-state-2026-10-02);
-for the others, their task trackers.
+The state column is a snapshot as of 2026-10-24. Each repository is the
+authority for its own state: the
+[atoms roadmap](https://github.com/verifiably/atoms/blob/main/docs/plans/README.md#status),
+the linked nodes and autonomy READMEs, the kernel's
+[adoption ledger's current-state summary](https://github.com/verifiably/beliefs/blob/main/docs/designs/2026-08-03-redesign-adoption-ledger.md#current-state-2026-10-02),
+and science's completed
+[coordination task](https://github.com/verifiably/science/blob/main/tasks/sci-f95f8b.md)
+and [first sharing milestone](https://github.com/verifiably/science/blob/main/tasks/sci-13050a.md).
 
 The [user and autonomy layer design](https://github.com/verifiably/beliefs/blob/main/docs/superpowers/specs/2026-08-29-user-and-autonomy-layer-design.md)
 specifies the top two layers. Its success criterion is a coding-agent session in
