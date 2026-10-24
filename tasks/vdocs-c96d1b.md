@@ -4,8 +4,8 @@ title: Guided tours of the ecosystem with understanding checks
 status: idea
 priority: 2
 created: 2026-10-13T23:17:11Z
-updated: 2026-10-23T18:53:06Z
-depends: [vdocs-9ca77b]
+updated: 2026-10-24T00:43:13Z
+depends: [vdocs-9ca77b, vdocs-e4318e]
 parent: vdocs-d2d5ed
 tags: [quick-add]
 source: "mindful:thought:f8b1c13fb4502058974da40ef793bc17"
