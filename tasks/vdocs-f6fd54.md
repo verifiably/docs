@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: fix/vdocs-f6fd54
 created: 2026-10-22T19:08:12Z
-updated: 2026-10-24T15:54:53Z
+updated: 2026-10-24T15:54:54Z
 started: 2026-10-24T15:48:20Z
 depends: []
 tags: []
@@ -44,3 +44,4 @@ Reported files:
 - 2026-10-24T15:54:51Z (fix/vdocs-f6fd54): review: impl round 2 — verdict: accept; findings: Critical 0, Important 0, Minor 0; reviewer: codex/gpt-6.1-sol
 - 2026-10-24T15:54:51Z (fix/vdocs-f6fd54): attached: impl-round-2-report.md (1271 bytes): Full fresh scoped corrective review by codex/gpt-6.1-sol accepting 65862cb with no findings
 - 2026-10-24T15:54:52Z (fix/vdocs-f6fd54): Ruling: accept correction 65862cb and fresh round-2 review; prior guard finding resolved, no minor (deferred) findings remain. Why: the dated prerequisite names the reviewed tilde-aware checker and requires its explicit candidate path until shipment, preserving the removed grep coverage. Cost: an incorrect prerequisite could allow readers to trust an older checker; candidate identity and detection were independently verified.
+- 2026-10-24T15:54:52Z (fix/vdocs-f6fd54): Ruling: accept reviewers declining reexecution and validation of unchanged historical rollout examples (cd8657e and 65862cb). Why: this task corrects historical path representations and does not run old rollouts. Cost: unchanged historical install/runtime examples remain unverified as current instructions.
