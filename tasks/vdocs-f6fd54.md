@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: fix/vdocs-f6fd54
 created: 2026-10-22T19:08:12Z
-updated: 2026-10-24T15:51:01Z
+updated: 2026-10-24T15:53:09Z
 started: 2026-10-24T15:48:20Z
 depends: []
 tags: []
@@ -38,3 +38,4 @@ Reported files:
 - 2026-10-24T15:50:59Z (fix/vdocs-f6fd54): Disposition docs/plans/2026-10-09-readme-template.md: replaced three literal checkout-path descriptions (constraint, nodes rule, atoms rule) with portable role descriptions; replaced six hardcoded checkout-path grep arms with the existing ops-check machine-layout guard and retained the other grep checks, updating the explicit expected output. No plan headings, rollout decisions, task associations or review records removed.
 - 2026-10-24T15:50:59Z (fix/vdocs-f6fd54): Disposition docs/specs/2026-10-09-readme-template-design.md: replaced the literal checkout-path example in the nodes Consumers migration row with home-relative checkout paths; preserved the decision and destination. No host-configuration exemption applies; no layout_allowed file added. No attachments or review ledgers changed.
 - 2026-10-24T15:51:00Z (fix/vdocs-f6fd54): Verification at cd8657e: reviewed candidate ops/.worktrees/ops-295f8d/bin/ops-check exits 0 with zero findings; its SHA-256 ca6fd1b272a5f25f5f001ef1fde215e1e6a3aef847df063a0d58e3bdf3a96e25 matches ops implementation 79f1235 exactly. just test-fast, just check, tasks check and git diff --check pass. Project recipes report no test count and skip five siblings from a worktree. Supplemental through just --set test_cmd "python3 -" test checks the same worktree link checker against the main checkout sibling directory: 8 Markdown files, all 5 sibling repositories present, zero errors and no skips. No runner or shared pointer modified.
+- 2026-10-24T15:53:09Z (fix/vdocs-f6fd54): review: impl round 1 — verdict: revise; findings: Critical 0, Important 0, Minor 1; reviewer: codex/gpt-6.1-sol
