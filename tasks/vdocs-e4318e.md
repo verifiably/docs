@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-24T00:43:13Z
-updated: 2026-10-24T18:59:53Z
+updated: 2026-10-24T19:01:59Z
 started: 2026-10-24T16:09:04Z
 depends: []
 parent: vdocs-d2d5ed
@@ -49,3 +49,4 @@ Ideas it wakes: On completion, run `tasks -C <root> note vdocs-c96d1b --no-revie
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-24T18:59:53Z (main): resumed
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-24T19:01:59Z (main): check 2 (choose the layer): 7 of 7; rated useful. Side question on nodes adoption of atoms: no task tracked it; filed atoms-495445 (idea) and atoms-c0220c (§12.2 cites §15 for the seam, §15 lacks it). atoms-dd5a5e landed in another session during the tour (README abstract and design §2 rewritten)
