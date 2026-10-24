@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-24T00:43:13Z
-updated: 2026-10-24T17:09:29Z
+updated: 2026-10-24T17:10:05Z
 started: 2026-10-24T16:09:04Z
 depends: []
 parent: vdocs-d2d5ed
@@ -36,3 +36,4 @@ Ideas it wakes: On completion, run `tasks -C <root> note vdocs-c96d1b --no-revie
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-24T17:09:29Z (main): resumed
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-24T17:10:05Z (main): check 1 (explain back): right on ACID contrast and end-state intent; wrong: Dropbox across hosts is a stated non-guarantee (§3.2); half: multiple agents (one-host cooperating lock only, §7.1); refinements: domain-neutral writes, third branch is halt. Side questions on consumer/ordering/ownership/split answered from superseded 2026-07-20 design §2
