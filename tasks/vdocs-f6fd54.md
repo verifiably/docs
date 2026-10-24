@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: fix/vdocs-f6fd54
 created: 2026-10-22T19:08:12Z
-updated: 2026-10-24T15:54:57Z
+updated: 2026-10-24T15:55:27Z
 started: 2026-10-24T15:48:20Z
 completed: 2026-10-24T15:54:54Z
 closed: 2026-10-24T15:54:54Z
@@ -53,3 +53,4 @@ Reported files:
   provenance: {"harness_session":"codex:01a16e98-902b-7952-bfd9-3c4944ca26d7","harness_session_source":"CODEX_THREAD_ID"}
 - 2026-10-24T15:54:54Z (fix/vdocs-f6fd54): Resolved all 12 findings across brief, plan and spec; preserved historical decisions and evidence, made checker prerequisite explicit, two independent reviews with final zero findings; project checks and reviewed candidate clean; local integration follows.
   provenance: {"harness_session":"codex:01a16e98-902b-7952-bfd9-3c4944ca26d7","harness_session_source":"CODEX_THREAD_ID"}
+- 2026-10-24T15:55:27Z (main): Integration complete: reviewed branch fast-forwarded locally into main at 6d17050. Main-checkout just test and just check passed with no skipped siblings; reviewed candidate checker passed with zero findings; git diff --check clean. tt-report --project vdocs harvested timings. tasks show confirmed both full review attachments are present. Worktree clean with no ignored entries, no host pointers found; task worktree and merged branch removed. No checker vendoring/publication/push, shared launcher changes, persistent scratch or evidence copies created.
