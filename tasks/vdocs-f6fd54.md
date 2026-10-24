@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: fix/vdocs-f6fd54
 created: 2026-10-22T19:08:12Z
-updated: 2026-10-24T15:50:59Z
+updated: 2026-10-24T15:51:00Z
 started: 2026-10-24T15:48:20Z
 depends: []
 tags: []
@@ -36,3 +36,4 @@ Reported files:
 - 2026-10-24T15:49:41Z (fix/vdocs-f6fd54): Scope confirmed: direct documentation-only cleanup of the three reported historical documents; no runtime contract, attachments, review ledgers, vendored tools or exemptions change. Candidate ops/.worktrees/ops-295f8d/bin/ops-check reproduces 12 findings (brief 2, plan 9, spec 1), exit 1; source evidence manifest verified as 95e95ef6b93f94927641b71d48af6df65d0239e085ae3f59ecc24ba44b72b2f3 and every listed hash matches. Baseline just test exits 0 but skips five absent sibling checkouts and reports no test count; this is incomplete cross-repository verification, to be supplemented against the main checkout siblings. just setup is the declared no-op and completed.
 - 2026-10-24T15:50:58Z (fix/vdocs-f6fd54): Disposition docs/notes/2026-10-09-readme-template-brief.md: replaced the two literal historical home-relative checkout links with the named consumers mindful v6 and beliefs; preserved the dated audit and its defect classification. Exact original text remains in pre-change Git history at 2d275db.
 - 2026-10-24T15:50:59Z (fix/vdocs-f6fd54): Disposition docs/plans/2026-10-09-readme-template.md: replaced three literal checkout-path descriptions (constraint, nodes rule, atoms rule) with portable role descriptions; replaced six hardcoded checkout-path grep arms with the existing ops-check machine-layout guard and retained the other grep checks, updating the explicit expected output. No plan headings, rollout decisions, task associations or review records removed.
+- 2026-10-24T15:50:59Z (fix/vdocs-f6fd54): Disposition docs/specs/2026-10-09-readme-template-design.md: replaced the literal checkout-path example in the nodes Consumers migration row with home-relative checkout paths; preserved the decision and destination. No host-configuration exemption applies; no layout_allowed file added. No attachments or review ledgers changed.
