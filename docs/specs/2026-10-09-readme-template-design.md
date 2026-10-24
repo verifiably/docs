@@ -235,7 +235,7 @@ where it goes.
 | atoms | `AGENTS.md` `## Deferred obligations`, `## Authority order`, `## Conventions` | `Rules` names the deferred-obligation ledger and the authority order; conventions that restate the global layer are deleted. |
 | nodes | `## Architecture` (the two-layer diagram) | Dropped; the abstract states the layering in words and `docs/STANDARD.md` is the authority. |
 | nodes | `## Development` (just recipes) | `AGENTS.md` `Gates`. |
-| nodes | `## Consumers` with `~/d/...` paths | The abstract names beliefs and mindful v6 as the profiles built on it; the machine-local paths go. |
+| nodes | `## Consumers` with home-relative checkout paths | The abstract names beliefs and mindful v6 as the profiles built on it; the machine-local paths go. |
 | beliefs | `## The designs` (the 85-row table and its read-order guidance) and the clean-start paragraph naming `proto-science` | `docs/designs/README.md`, a designs index: the same table, the reading order, and the predecessor paragraph (the `proto-science` link stays under `khughitt`, where that repository is). The contributor guide's "Read in this order" links the index. |
 | beliefs | `## Status` (the implementation tally) | Deleted. The adoption ledger's current-state summary is the sole authority for what is built, as the contributor guide already states; `Documentation` links it. |
 | beliefs | The layout code block | `## Layout`. |

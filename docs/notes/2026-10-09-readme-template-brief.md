@@ -19,7 +19,7 @@ Audit of each `README.md` at its checkout's `main`, 2026-10-09:
 | repo | lines | install / usage | ecosystem link | defects found |
 |---|---|---|---|---|
 | atoms | 140 | none | none | `## Status`, design decisions and future work are bookkeeping that belong in `docs/` |
-| nodes | 54 | `## Development` (just recipes) | none | `## Consumers` links `~/d/mindful/v6/`, `~/d/beliefs/` |
+| nodes | 54 | `## Development` (just recipes) | none | `## Consumers` uses home-relative checkout links to mindful v6 and beliefs |
 | beliefs | 255 | none | yes, to the overview | 85-row design table and status prose; links `khughitt/nodes`, `khughitt/atoms`, `khughitt/proto-science` (org moved to `verifiably`); calls the stack "Science"; no LICENSE |
 | science | 21 | none | none | relative `../beliefs/...` link (breaks on GitHub); "the one shipped command, `status`" while `commands/` holds 18 entries (likely stale); calls the stack "Science"; no LICENSE |
 | autonomy | 19 | none (nothing built) | none | relative `../beliefs/...` link; calls the stack "Science"; no LICENSE |

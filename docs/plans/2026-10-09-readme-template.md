@@ -33,7 +33,7 @@ round 2). Its mechanism is ops `docs/specs/2026-10-09-family-guide-templates-des
   `Documentation`, `License`. No status region. The family region directly follows the
   identity region.
 - Prose rules (spec §4): the stack is "verifiably", never "Science" (rule identities
-  such as `science.identity.v1` keep their names); no machine-local paths (`~/d/...`);
+  such as `science.identity.v1` keep their names); no machine-local checkout or storage paths;
   no `../<repo>` links; cross-repository links are
   `https://github.com/verifiably/<repo>/blob/main/<path>`.
 - Every rollout happens in that member's own task worktree, never in its main checkout;
@@ -484,8 +484,9 @@ this order:
 6. Write `AGENTS.md` as each rollout says.
 7. Render: `python3 tools/ops-docs write --init` (both regions in both files), then
    `python3 tools/ops-docs check; echo exit=$?` expecting `exit=0`.
-8. Grep the guards:
-   `grep -n -E 'Science|~/d/|\]\(\.\./' README.md AGENTS.md` expecting no output, except
+8. Run `python3 tools/ops-check` for machine-layout paths, expecting exit 0, then
+   grep the remaining prose guards:
+   `grep -n -E 'Science|\]\(\.\./' README.md AGENTS.md` expecting no output, except
    for rule identities such as `science.identity.v1` where a rollout names them. Then
    verify every relative Markdown link in both guides, which neither the member's gate
    nor ops-check does (ops-check reads backticked paths, not links):
@@ -627,11 +628,12 @@ runs it. Every test recipe is `true` until the envelope is built; replace them i
 
 ```bash
 python3 tools/ops-docs write --init && python3 tools/ops-docs check; echo exit=$?
-grep -n -E 'Science|~/d/|\]\(\.\./' README.md AGENTS.md; echo grep=$?
+python3 tools/ops-check; echo layout=$?
+grep -n -E 'Science|\]\(\.\./' README.md AGENTS.md; echo grep=$?
 just check; echo exit=$?
 ```
 
-Expected: `exit=0`, `grep=1` (no matches), `exit=0`. `just check` includes ops-check,
+Expected: `exit=0`, `layout=0`, `grep=1` (no matches), `exit=0`. `just check` includes ops-check,
 whose backtick rule treats every backticked path in the guides as a claim that it is
 tracked: the two guides above backtick none that is not. The README's family region
 shows `**autonomy**` bold.
@@ -761,7 +763,8 @@ deleted: the identity region replaces it.
 
 ```bash
 python3 tools/ops-docs write --init && python3 tools/ops-docs check; echo exit=$?
-grep -n -E 'Science|~/d/|\]\(\.\./' README.md AGENTS.md; echo grep=$?
+python3 tools/ops-check; echo layout=$?
+grep -n -E 'Science|\]\(\.\./' README.md AGENTS.md; echo grep=$?
 just check; echo exit=$?
 just test-fast; echo exit=$?
 ```
@@ -964,15 +967,16 @@ status, so the cleanup cannot mask a failure. Both print `A`, and `ts exit=0`.
   APIs. Kinds are name + facets + invariants, never subclasses.
 ```
 
-The old `## Conventions` lines "Fail early", "Filepaths in docs use `~/d/nodes/...`",
-"No AI-attribution trailers" and the whole `## Tasks workflow` are deleted: global
-layer.
+The old `## Conventions` lines "Fail early", the home-relative nodes checkout path
+rule, "No AI-attribution trailers" and the whole `## Tasks workflow` are deleted:
+global layer.
 
 - [ ] **Step 5: Render, check, test, commit**
 
 ```bash
 python3 tools/ops-docs write --init && python3 tools/ops-docs check; echo exit=$?
-grep -n -E 'Science|~/d/|\]\(\.\./' README.md AGENTS.md; echo grep=$?
+python3 tools/ops-check; echo layout=$?
+grep -n -E 'Science|\]\(\.\./' README.md AGENTS.md; echo grep=$?
 just check; echo exit=$?
 just test-fast; echo exit=$?
 git add -A
@@ -1239,13 +1243,14 @@ tests are proven only on the certified ext4 tuple, which the pre-push gate uses 
 ```
 
 The `## What this is`, `## Status`, `## Conventions` (global restatements and the
-`~/d/atoms/...` path rule) and `## Tasks workflow` sections are gone.
+home-relative atoms checkout path rule) and `## Tasks workflow` sections are gone.
 
 - [ ] **Step 8: Render, check, test, commit**
 
 ```bash
 python3 tools/ops-docs write --init && python3 tools/ops-docs check; echo exit=$?
-grep -n -E 'Science|~/d/|\]\(\.\./' README.md AGENTS.md docs/plans/README.md; echo grep=$?
+python3 tools/ops-check; echo layout=$?
+grep -n -E 'Science|\]\(\.\./' README.md AGENTS.md docs/plans/README.md; echo grep=$?
 just check; echo exit=$?
 just test-one tests/test_docs_status.py; echo exit=$?
 just test-fast; echo exit=$?
@@ -1438,7 +1443,8 @@ deleted. The H1 changes from `# Repository guidance` to `# beliefs — agent gui
 
 ```bash
 python3 tools/ops-docs write --init && python3 tools/ops-docs check; echo exit=$?
-grep -n -E 'Science|~/d/|\]\(\.\./|khughitt' README.md AGENTS.md docs/designs/README.md; echo grep=$?
+python3 tools/ops-check; echo layout=$?
+grep -n -E 'Science|\]\(\.\./|khughitt' README.md AGENTS.md docs/designs/README.md; echo grep=$?
 just check; echo exit=$?
 just test-fast; echo exit=$?
 ```
