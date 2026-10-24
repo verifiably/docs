@@ -1,13 +1,15 @@
 ---
 id: vdocs-f6fd54
 title: Resolve existing tilde-layout findings before checker rollout
-status: todo
+status: doing
 priority: 2
 size: s
 complexity: mid
 process: direct
+owner: main
 created: 2026-10-22T19:08:12Z
-updated: 2026-10-22T19:08:12Z
+updated: 2026-10-24T15:48:20Z
+started: 2026-10-24T15:48:20Z
 depends: []
 tags: []
 source: ops-295f8d
@@ -24,3 +26,8 @@ Reported files:
 - docs/notes/2026-10-09-readme-template-brief.md: first reported line 22; 2 reported finding(s)
 - docs/plans/2026-10-09-readme-template.md: first reported line 36; 9 reported finding(s)
 - docs/specs/2026-10-09-readme-template-design.md: first reported line 238; 1 reported finding(s)
+
+## Notes
+
+- 2026-10-24T15:48:20Z (main): started
+  provenance: {"harness_session":"codex:01a16e98-902b-7952-bfd9-3c4944ca26d7","harness_session_source":"CODEX_THREAD_ID"}
