@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-24T00:43:13Z
-updated: 2026-10-24T18:14:13Z
+updated: 2026-10-24T18:14:57Z
 started: 2026-10-24T16:09:04Z
 depends: []
 parent: vdocs-d2d5ed
@@ -44,3 +44,4 @@ Ideas it wakes: On completion, run `tasks -C <root> note vdocs-c96d1b --no-revie
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-24T18:14:13Z (main): resumed
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-24T18:14:57Z (main): stop 2 presented: layer ownership, 7 shuffled items A-G over atoms/nodes/beliefs/science; key B,D atoms; C,G nodes; A,F beliefs; E science (sources: atoms README Install, design §1/§12.2; nodes STANDARD §8.2, §9.1; beliefs identity, family adapters §1; overview.md:222)
