@@ -8,7 +8,7 @@ complexity: low
 process: direct
 owner: docs/vdocs-aabed7-layer-states
 created: 2026-10-23T18:52:18Z
-updated: 2026-10-24T15:13:57Z
+updated: 2026-10-24T15:15:51Z
 started: 2026-10-24T15:13:50Z
 depends: []
 tags: [docs]
@@ -23,3 +23,4 @@ Found 2026-10-14 and rechecked 2026-10-23 during the guided-tour pilot (vdocs-9c
   provenance: {"harness_session":"codex:01a16e79-06c8-76b0-9c72-6a9214c2650a","harness_session_source":"CODEX_THREAD_ID"}
 - 2026-10-24T15:13:57Z (docs/vdocs-aabed7-layer-states): resumed
   provenance: {"harness_session":"codex:01a16e79-06c8-76b0-9c72-6a9214c2650a","harness_session_source":"CODEX_THREAD_ID"}
+- 2026-10-24T15:15:51Z (docs/vdocs-aabed7-layer-states): Scope: overview.md layer-state table and its authority paragraph only. Checked atoms README/Plan A roadmap, nodes README and both Corpus implementations, beliefs current-state ledger (cut 46), science README/coordination closeout/commons 1a completion and handlers, and autonomy README/envelope status and modules. No implementation changes or new design documents needed. Baseline: just setup completed; default just test exited 0 but skipped all five siblings, so it was not accepted as the baseline. Repeated the full-suite just test recipe with test_cmd invoking the same checker and SIBLINGS set to the actual sibling checkout directory: 57 link targets checked, no skips or errors. The checker exposes links rather than unit-test counts.
