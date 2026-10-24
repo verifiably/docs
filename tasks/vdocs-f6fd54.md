@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: fix/vdocs-f6fd54
 created: 2026-10-22T19:08:12Z
-updated: 2026-10-24T15:48:30Z
+updated: 2026-10-24T15:49:41Z
 started: 2026-10-24T15:48:20Z
 depends: []
 tags: []
@@ -33,3 +33,4 @@ Reported files:
   provenance: {"harness_session":"codex:01a16e98-902b-7952-bfd9-3c4944ca26d7","harness_session_source":"CODEX_THREAD_ID"}
 - 2026-10-24T15:48:30Z (fix/vdocs-f6fd54): resumed
   provenance: {"harness_session":"codex:01a16e98-902b-7952-bfd9-3c4944ca26d7","harness_session_source":"CODEX_THREAD_ID"}
+- 2026-10-24T15:49:41Z (fix/vdocs-f6fd54): Scope confirmed: direct documentation-only cleanup of the three reported historical documents; no runtime contract, attachments, review ledgers, vendored tools or exemptions change. Candidate ops/.worktrees/ops-295f8d/bin/ops-check reproduces 12 findings (brief 2, plan 9, spec 1), exit 1; source evidence manifest verified as 95e95ef6b93f94927641b71d48af6df65d0239e085ae3f59ecc24ba44b72b2f3 and every listed hash matches. Baseline just test exits 0 but skips five absent sibling checkouts and reports no test count; this is incomplete cross-repository verification, to be supplemented against the main checkout siblings. just setup is the declared no-op and completed.
