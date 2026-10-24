@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: fix/vdocs-f6fd54
 created: 2026-10-22T19:08:12Z
-updated: 2026-10-24T15:54:51Z
+updated: 2026-10-24T15:54:52Z
 started: 2026-10-24T15:48:20Z
 depends: []
 tags: []
@@ -42,3 +42,4 @@ Reported files:
 - 2026-10-24T15:53:10Z (fix/vdocs-f6fd54): Ruling: regrade the guard-prerequisite finding from Minor to Important and fix before merge (reviewed revision cd8657e, plan line 487 and five rollout blocks). Why: following the edited commands with the existing vendored checker loses the old grep coverage; the cleanup must preserve that coverage explicitly even in historical instructions. Cost: without the correction, a reader could receive a clean verdict for a protected home-relative checkout path. The reviewer treats it as Minor because historical rollouts are not being executed; the controller requires the dependency clarification as part of preserving meaning.
 - 2026-10-24T15:53:36Z (fix/vdocs-f6fd54): attached: impl-round-1-report.md (2726 bytes): Full frozen-revision review by codex/gpt-6.1-sol of cd8657e; guard dependency finding and controller regrade recorded on task
 - 2026-10-24T15:54:51Z (fix/vdocs-f6fd54): review: impl round 2 — verdict: accept; findings: Critical 0, Important 0, Minor 0; reviewer: codex/gpt-6.1-sol
+- 2026-10-24T15:54:51Z (fix/vdocs-f6fd54): attached: impl-round-2-report.md (1271 bytes): Full fresh scoped corrective review by codex/gpt-6.1-sol accepting 65862cb with no findings
