@@ -20,6 +20,13 @@ the tasks CLI, this repository's `tools/check_links.py`.
 **Spec:** `docs/specs/2026-10-09-readme-template-design.md` (accepted 2026-10-09, review
 round 2). Its mechanism is ops `docs/specs/2026-10-09-family-guide-templates-design.md`.
 
+**Portability amendment (2026-10-24):** This is a historical rollout plan. The
+machine-layout guard commands below require the tilde-aware checker reviewed in
+ops-295f8d (ops commit `79f1235`). Until that checker ships in a member, replace
+`tools/ops-check` in those commands with the reviewed candidate's explicit path
+recorded on that task; an older vendored copy does not preserve the removed grep
+check. This cleanup does not vendor or publish the checker or rerun the rollout.
+
 ## Global Constraints
 
 - Family file limits, checked by `ops-docs` wherever the file is read: `summary` at most
