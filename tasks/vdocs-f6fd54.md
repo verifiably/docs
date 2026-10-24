@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: fix/vdocs-f6fd54
 created: 2026-10-22T19:08:12Z
-updated: 2026-10-24T15:54:55Z
+updated: 2026-10-24T15:54:56Z
 started: 2026-10-24T15:48:20Z
 depends: []
 tags: []
@@ -46,3 +46,4 @@ Reported files:
 - 2026-10-24T15:54:52Z (fix/vdocs-f6fd54): Ruling: accept correction 65862cb and fresh round-2 review; prior guard finding resolved, no minor (deferred) findings remain. Why: the dated prerequisite names the reviewed tilde-aware checker and requires its explicit candidate path until shipment, preserving the removed grep coverage. Cost: an incorrect prerequisite could allow readers to trust an older checker; candidate identity and detection were independently verified.
 - 2026-10-24T15:54:52Z (fix/vdocs-f6fd54): Ruling: accept reviewers declining reexecution and validation of unchanged historical rollout examples (cd8657e and 65862cb). Why: this task corrects historical path representations and does not run old rollouts. Cost: unchanged historical install/runtime examples remain unverified as current instructions.
 - 2026-10-24T15:54:53Z (fix/vdocs-f6fd54): Ruling: accept reviewer declining overall candidate-checker implementation review (cd8657e). Why: upstream separately reviewed and tested ops implementation 79f1235; this task verifies its exact hash and actual scan verdict. Cost: upstream checker defects outside this cleanup could remain undetected; checker publication is still gated separately.
+- 2026-10-24T15:54:54Z (fix/vdocs-f6fd54): retained: {"host":"titan","kind":"worktree","path":".worktrees/vdocs-f6fd54","state":"kept","verification":"verified","purpose":"Immediate local integration of independently reviewed documentation cleanup; clean tree, no ignored files, reports attached through tasks CLI, no host pointers found","next_owner":"session:codex:01a16e98-902b-7952-bfd9-3c4944ca26d7","cleanup_trigger":"After local merge into main passes project checks and the reviewed candidate, recheck removal requirements and remove this task worktree in this turn"}
