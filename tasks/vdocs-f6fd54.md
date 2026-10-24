@@ -1,15 +1,17 @@
 ---
 id: vdocs-f6fd54
 title: Resolve existing tilde-layout findings before checker rollout
-status: doing
+status: done
 priority: 2
 size: s
 complexity: mid
 process: direct
 owner: fix/vdocs-f6fd54
 created: 2026-10-22T19:08:12Z
-updated: 2026-10-24T15:54:56Z
+updated: 2026-10-24T15:54:57Z
 started: 2026-10-24T15:48:20Z
+completed: 2026-10-24T15:54:54Z
+closed: 2026-10-24T15:54:54Z
 depends: []
 tags: []
 source: ops-295f8d
@@ -47,3 +49,7 @@ Reported files:
 - 2026-10-24T15:54:52Z (fix/vdocs-f6fd54): Ruling: accept reviewers declining reexecution and validation of unchanged historical rollout examples (cd8657e and 65862cb). Why: this task corrects historical path representations and does not run old rollouts. Cost: unchanged historical install/runtime examples remain unverified as current instructions.
 - 2026-10-24T15:54:53Z (fix/vdocs-f6fd54): Ruling: accept reviewer declining overall candidate-checker implementation review (cd8657e). Why: upstream separately reviewed and tested ops implementation 79f1235; this task verifies its exact hash and actual scan verdict. Cost: upstream checker defects outside this cleanup could remain undetected; checker publication is still gated separately.
 - 2026-10-24T15:54:54Z (fix/vdocs-f6fd54): retained: {"host":"titan","kind":"worktree","path":".worktrees/vdocs-f6fd54","state":"kept","verification":"verified","purpose":"Immediate local integration of independently reviewed documentation cleanup; clean tree, no ignored files, reports attached through tasks CLI, no host pointers found","next_owner":"session:codex:01a16e98-902b-7952-bfd9-3c4944ca26d7","cleanup_trigger":"After local merge into main passes project checks and the reviewed candidate, recheck removal requirements and remove this task worktree in this turn"}
+- 2026-10-24T15:54:54Z (fix/vdocs-f6fd54): done
+  provenance: {"harness_session":"codex:01a16e98-902b-7952-bfd9-3c4944ca26d7","harness_session_source":"CODEX_THREAD_ID"}
+- 2026-10-24T15:54:54Z (fix/vdocs-f6fd54): Resolved all 12 findings across brief, plan and spec; preserved historical decisions and evidence, made checker prerequisite explicit, two independent reviews with final zero findings; project checks and reviewed candidate clean; local integration follows.
+  provenance: {"harness_session":"codex:01a16e98-902b-7952-bfd9-3c4944ca26d7","harness_session_source":"CODEX_THREAD_ID"}
