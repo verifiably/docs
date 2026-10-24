@@ -6,9 +6,9 @@ priority: 2
 size: xs
 complexity: low
 process: direct
-owner: main
+owner: docs/vdocs-aabed7-layer-states
 created: 2026-10-23T18:52:18Z
-updated: 2026-10-24T15:13:50Z
+updated: 2026-10-24T15:13:57Z
 started: 2026-10-24T15:13:50Z
 depends: []
 tags: [docs]
@@ -20,4 +20,6 @@ Found 2026-10-14 and rechecked 2026-10-23 during the guided-tour pilot (vdocs-9c
 ## Notes
 
 - 2026-10-24T15:13:50Z (main): started
+  provenance: {"harness_session":"codex:01a16e79-06c8-76b0-9c72-6a9214c2650a","harness_session_source":"CODEX_THREAD_ID"}
+- 2026-10-24T15:13:57Z (docs/vdocs-aabed7-layer-states): resumed
   provenance: {"harness_session":"codex:01a16e79-06c8-76b0-9c72-6a9214c2650a","harness_session_source":"CODEX_THREAD_ID"}
