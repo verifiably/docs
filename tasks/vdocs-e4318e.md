@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-24T00:43:13Z
-updated: 2026-10-24T17:10:28Z
+updated: 2026-10-24T17:35:25Z
 started: 2026-10-24T16:09:04Z
 depends: []
 parent: vdocs-d2d5ed
@@ -39,3 +39,4 @@ Ideas it wakes: On completion, run `tasks -C <root> note vdocs-c96d1b --no-revie
 - 2026-10-24T17:10:05Z (main): check 1 (explain back): right on ACID contrast and end-state intent; wrong: Dropbox across hosts is a stated non-guarantee (§3.2); half: multiple agents (one-host cooperating lock only, §7.1); refinements: domain-neutral writes, third branch is halt. Side questions on consumer/ordering/ownership/split answered from superseded 2026-07-20 design §2
 - 2026-10-24T17:10:28Z (main): parked (waiting on user): User rates check 1; then the agent records the rating and presents stop 2 (which layer owns a behaviour, shuffled items, placement questions only)
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-24T17:35:25Z (main): check 1 rated helpful. Learner's side note: guides (and the tour) explain atoms relative to proto-science's intermediate code state, not the status quo a newcomer knows; filed atoms-dd5a5e. Tour-method lesson: grounding in a quoted source must not mean quoting history-laden jargon untranslated; explain against what the learner knows
