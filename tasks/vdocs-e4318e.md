@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-24T00:43:13Z
-updated: 2026-10-25T17:53:16Z
+updated: 2026-10-25T17:54:15Z
 started: 2026-10-24T16:09:04Z
 depends: []
 parent: vdocs-d2d5ed
@@ -61,3 +61,4 @@ Ideas it wakes: On completion, run `tasks -C <root> note vdocs-c96d1b --no-revie
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-25T17:53:16Z (main): resumed
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-25T17:54:15Z (main): check 3 rated helpful; check 4 (placement): 5 of 6 (P answered coordinator; key core, lexical A2; symlink escape is fs/A4), rated helpful. Stop 5 presented (reference model, choke point, certification, status fact) with closing mixed check Q1-Q8, one kind (true/false with a reason). Key: Q1 F (stored diagnostic returned, no automatic discharge, §8.1/§12); Q2 F (one-host lock, §3.2/§7.1); Q3 T (A7 §10.1); Q4 F (own changes restored, external blocker/drift preserved, §7.5/§9.2); Q5 F (beliefs' composition root combines them, atoms §12.2); Q6 F (core's pure model plans, each step authorized against fresh observation, coordinator executes, §13.1); Q7 T (§8.1); Q8 F (exact uname -r, other tuples fail closed, certification README)
