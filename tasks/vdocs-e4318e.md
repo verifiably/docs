@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-24T00:43:13Z
-updated: 2026-10-25T17:15:42Z
+updated: 2026-10-25T17:53:16Z
 started: 2026-10-24T16:09:04Z
 depends: []
 parent: vdocs-d2d5ed
@@ -58,4 +58,6 @@ Ideas it wakes: On completion, run `tasks -C <root> note vdocs-c96d1b --no-revie
 - 2026-10-25T17:15:13Z (main): check 3 (predict): 3 right (P1, P2, P5), 2 half (P3 missed that Dropbox's b.txt is kept and the outcome is a refusal; P4 nothing to undo, recorded ROLLED_BACK). Side questions: README 'as one step' vs §3.2 (filed atoms-783fc4); DeletePath takes files and symlinks only, no forward directory removal (§5.2, §9.3); frozen intent vs manifest (§4.1, §5.1, §15). Drift filed: atoms-46cc25 (layout omits atoms.chain, pyproject 'pure model', coordinator docstring)
 - 2026-10-25T17:15:41Z (main): stop 4 presented: five packages; check 4 placement K-P. Key: K fs (fs/volume.py CERTIFIED_ALLOWLIST); L core (core/recovery classifier); M chain (chain append/model, A7 §10); N coordinator (coordinator/effects/create_file.py, A7 'each module owns exactly the syscall execution'); O store (store/blobs.py content-addressed); P core (core/paths.py rejects '.'/'..', A2 lexical)
 - 2026-10-25T17:15:42Z (main): parked (waiting on user): User answers check 4 (K-P, which package); then the agent scores against the recorded key, asks for a rating, and presents stop 5 (design and code) and the closing mixed check across all stops
+  provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-25T17:53:16Z (main): resumed
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
