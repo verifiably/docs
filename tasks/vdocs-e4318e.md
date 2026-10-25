@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-24T00:43:13Z
-updated: 2026-10-25T17:13:22Z
+updated: 2026-10-25T17:15:13Z
 started: 2026-10-24T16:09:04Z
 depends: []
 parent: vdocs-d2d5ed
@@ -55,3 +55,4 @@ Ideas it wakes: On completion, run `tasks -C <root> note vdocs-c96d1b --no-revie
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
 - 2026-10-25T17:13:22Z (main): resumed
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-25T17:15:13Z (main): check 3 (predict): 3 right (P1, P2, P5), 2 half (P3 missed that Dropbox's b.txt is kept and the outcome is a refusal; P4 nothing to undo, recorded ROLLED_BACK). Side questions: README 'as one step' vs §3.2 (filed atoms-783fc4); DeletePath takes files and symlinks only, no forward directory removal (§5.2, §9.3); frozen intent vs manifest (§4.1, §5.1, §15). Drift filed: atoms-46cc25 (layout omits atoms.chain, pyproject 'pure model', coordinator docstring)
