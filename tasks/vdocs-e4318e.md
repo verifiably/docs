@@ -8,7 +8,7 @@ complexity: mid
 process: direct
 owner: main
 created: 2026-10-24T00:43:13Z
-updated: 2026-10-24T19:03:21Z
+updated: 2026-10-25T17:13:22Z
 started: 2026-10-24T16:09:04Z
 depends: []
 parent: vdocs-d2d5ed
@@ -52,4 +52,6 @@ Ideas it wakes: On completion, run `tasks -C <root> note vdocs-c96d1b --no-revie
 - 2026-10-24T19:01:59Z (main): check 2 (choose the layer): 7 of 7; rated useful. Side question on nodes adoption of atoms: no task tracked it; filed atoms-495445 (idea) and atoms-c0220c (§12.2 cites §15 for the seam, §15 lacks it). atoms-dd5a5e landed in another session during the tour (README abstract and design §2 rewritten)
 - 2026-10-24T19:03:20Z (main): stop 3 presented: transaction life; check 3 predict P1-P5. Key: P1 halt, nothing touched, both entries kept, later commands return the same halt until operator acts (§8.4, §9.1, §12, A7 §9); P2 keep final state, re-prove surface, finish cleanup, never roll back (§8.1); P3 b.txt refused (EEXIST), own staging removed, index.md and a.txt restored first, PreconditionRefused, Dropbox file kept (§9.2, §11); P4 nothing to undo, recorded ROLLED_BACK, active cleared (§8.4 last para); P5 lease first rolls back b.txt (classified landed or not), then index.md, a.txt in reverse, ROLLED_BACK, then the new transaction runs (§7.1, §8.3, §8.4)
 - 2026-10-24T19:03:21Z (main): parked (waiting on user): User answers check 3 (P1-P5 predictions); then the agent scores against the recorded key, asks for a rating, and presents stop 4 (subsystems: which atoms package a change lands in)
+  provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
+- 2026-10-25T17:13:22Z (main): resumed
   provenance: {"harness_session":"claude-code:1b29140b-c89c-4277-9bf0-a637ec403f80","harness_session_source":"CLAUDE_CODE_SESSION_ID"}
